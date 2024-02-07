@@ -1,0 +1,7 @@
+apiRules:
+- include:
+    type: Namespace
+    uidRegex: ^black\.kit\.toybox$
+- exclude:
+    type: Namespace
+    uidRegex: .*

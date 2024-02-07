@@ -6,6 +6,7 @@
     "*.meta": "yaml",
     "*.prefab": "yaml",
     "*.uss": "css",
+    ".manifest": "json",
     "LICENSE": "plaintext"
   },
   "files.readonlyInclude": {
@@ -24,6 +25,12 @@
     "UserSettings/**": true
   },
   "git.branchProtection": ["main"],
+  "json.schemas": [
+    {
+      "fileMatch": ["docfx.json"],
+      "url": "https://json.schemastore.org/docfx.json"
+    }
+  ],
   "search.exclude": {
     "**/*.suo": true,
     "Build/": true,
