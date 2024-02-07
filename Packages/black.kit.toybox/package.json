@@ -1,0 +1,16 @@
+{
+  "name": "black.kit.toybox",
+  "displayName": "black.kit.toybox",
+  "version": "0.0.0",
+  "description": "UdonSharp Toybox by Kuroné Kito",
+  "author": {
+    "name": "Kuroné Kito",
+    "email": "krone@kit.black",
+    "url": "https://kit.black/"
+  },
+  "dependencies": {},
+  "gitDependencies": {},
+  "vpmDependencies": {
+    "com.vrchat.worlds": "3.5.0"
+  }
+}
