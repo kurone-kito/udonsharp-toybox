@@ -24,10 +24,14 @@ ignorePaths:
   - Packages/*.json
   - ProjectSettings
 words:
+  - aniso
   - kito
   - kuroné
+  - MSAA
+  - nunit
+  - occludee
   - udon
   - vrcsdk
   - vrchat
 useGitignore: true
-version: '0.2'
+version: "0.2"
