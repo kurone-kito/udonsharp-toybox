@@ -14,7 +14,7 @@ My utilities library for the UdonSharp / VRChat
 
 ## ▶ Getting Started
 
-[See the documentation](Packages/black.kit.toybox/README.md)
+[See the documentation](https://kurone-kito.github.io/udonsharp-toybox/docs/)
 
 ## 💡 Features
 

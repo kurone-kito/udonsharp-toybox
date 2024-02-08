@@ -54,6 +54,16 @@ jobs:
             ${{ env.pathToCi }}/.nuke/temp
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
+      - name: Correct the documentation metadata
+        uses: nikeee/docfx-action@v1.0.0
+        with:
+          args: metadata Documentation/docfx.json
+      - name: Build the documentation
+        uses: nikeee/docfx-action@v1.0.0
+        with:
+          args: build Documentation/docfx.json
+      - name: move the documentation to the publish directory
+        run: cp -r Documentation/_site ${{ env.listPublishDirectory }}/docs
       - name: Build Package Version Listing with Nuke
         run: ${{ env.pathToCi }}/build.cmd BuildRepoListing --root ${{ env.pathToCi }} --list-publish-directory $GITHUB_WORKSPACE/${{ env.listPublishDirectory }} --current-package-name ${{ vars.PACKAGE_NAME }}
         env:
