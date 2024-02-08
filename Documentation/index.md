@@ -4,7 +4,7 @@ My utilities library for the UdonSharp / VRChat
 
 ## 💡 Features
 
-Empty yet.
+- 🌈 Logger with vivid colors
 
 ## 💻 System Requirements
 
