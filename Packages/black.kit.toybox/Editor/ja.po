@@ -8,6 +8,9 @@ msgstr ""
 msgid "DETAIL_OBSERVER_HUB"
 msgstr "このコンポーネントは、Subjectに多くのObserverを登録して、管理しづらい場合に活用します。無限にネストできますが、循環参照に注意してください。"
 
+msgid "DETAIL_POSITION_ANCHOR"
+msgstr "このコンポーネントは、アクティブと非アクティブに転送する座標情報を保持し、アクティブ状態が変化した際に指定オブジェクトをそこへ転送させます。"
+
 msgid "DETAIL_SUBJECT"
 msgstr "<b>Notify()</b>メソッドを実行すると、登録されたObserverに同時に通知されます。"
 
