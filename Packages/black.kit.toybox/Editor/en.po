@@ -4,3 +4,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
+
+msgid "DETAIL_OBSERVER_HUB"
+msgstr "Use this ObserverHub when you have many Observers registered in a Subject and it isn't easy to manage them. ObserverHub can be nested infinitely, but be careful of circular references."
+
+msgid "DETAIL_SUBJECT"
+msgstr "When the <b>Notify()</b> method is executed, the registered Observers are notified simultaneously."
+
+msgid "WARN_AVOID_EMPTY_ARRAY"
+msgstr "To avoid extra load, it is recommended that the array's contents be packed as tightly as possible with no spaces."
+
+msgid "WARN_CIRCULAR_REFERENCE"
+msgstr "<b>Do not use circular references. It may cause an infinite loop.</b>"
