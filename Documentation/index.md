@@ -5,6 +5,7 @@ My utilities library for the UdonSharp / VRChat
 ## 💡 Features
 
 - 🌈 Logger with vivid colors
+- ⚙️ Some extended methods for the arrays, strings, and VRCPlayerApi
 
 ## 💻 System Requirements
 
@@ -24,7 +25,22 @@ My utilities library for the UdonSharp / VRChat
 
 ### 3. Use the utilities, enjoy :D
 
-(To be added)
+Example:
+
+```csharp
+using black.kit.toybox;
+
+public class Example : UdonSharpBehaviour
+{
+    public void Start()
+    {
+      // Example of using the Contains extension method
+      var array = new[] { 1, 2, 3, 4, 5 };
+      Debug.Log($"Contains(3): {array.Contains(3)}");
+      Debug.Log($"Contains(6): {array.Contains(6)}");
+    }
+}
+```
 
 ## License
 
