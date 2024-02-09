@@ -4,3 +4,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
+
+msgid "DETAIL_OBSERVER_HUB"
+msgstr "このコンポーネントは、Subjectに多くのObserverを登録して、管理しづらい場合に活用します。無限にネストできますが、循環参照に注意してください。"
+
+msgid "DETAIL_SUBJECT"
+msgstr "<b>Notify()</b>メソッドを実行すると、登録されたObserverに同時に通知されます。"
+
+msgid "WARN_AVOID_EMPTY_ARRAY"
+msgstr "余分な負荷を避けるため、配列の内容はできるだけ空白を含まないように詰めることをお勧めします。"
+
+msgid "WARN_CIRCULAR_REFERENCE"
+msgstr "<b>循環参照に注意してください。無限ループに陥る可能性があります。</b>"

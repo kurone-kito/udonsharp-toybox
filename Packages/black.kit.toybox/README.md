@@ -8,6 +8,7 @@ My utilities library for the UdonSharp / VRChat
 
 ## 💡 Features
 
+- 🗞 Publish-Subscribe pattern component
 - 🌈 Logger with vivid colors
 - ⚙️ Some extended methods for the arrays, strings, and VRCPlayerApi
 
@@ -53,6 +54,55 @@ All library components are in the `black.kit.toybox` namespace.
 ```csharp
 using black.kit.toybox;
 ```
+
+---
+
+### `Observer` _abstract_ class / extends `UdonSharpBehaviour`
+
+The class of the observer side in the publish-subscribe model.
+
+#### `public abstract void OnNotify(Subject subject)`
+
+Implement a callback when a call is received from the subject.
+
+---
+
+### `ObserverHub` class / extends `Observer`
+
+The hub class of the observer side in the publish-subscribe model.
+
+Use this ObserverHub when you have many Observers registered in a Subject
+and it isn't easy to manage them. ObserverHub can be nested infinitely,
+but be careful of circular references.
+
+#### Inspector fields
+
+- `Observer[] children`: The list of the children observers.
+
+#### `public override void OnNotify(Subject subject)`
+
+The callback is when a call is received from the subject.
+
+---
+
+### `Subject` class / extends `UdonSharpBehaviour`
+
+The class of the subject side in the publish-subscribe model.
+
+#### Inspector fields
+
+- `Observer[] observers`: The list of observers.
+
+#### `public virtual string ClassName { get; }`
+
+Gets the class name of the subject. The default value is `Subject`.
+It can be overridden, so please use it as a hint for casting with observers.
+
+#### `public virtual void Notify()`
+
+Notify all observers.
+
+---
 
 ### Extension methods
 
