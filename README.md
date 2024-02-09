@@ -19,6 +19,7 @@ My utilities library for the UdonSharp / VRChat
 ## 💡 Features
 
 - 🌈 Logger with vivid colors
+- ⚙️ Some extended methods for the arrays, strings, and VRCPlayerApi
 
 ## License
 
