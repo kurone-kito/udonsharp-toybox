@@ -25,6 +25,8 @@ ignorePaths:
   - ProjectSettings
 words:
   - aniso
+  - atrous
+  - denoiser
   - kito
   - kuroné
   - MSAA

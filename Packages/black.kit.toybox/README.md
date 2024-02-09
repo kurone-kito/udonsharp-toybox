@@ -8,6 +8,7 @@ My utilities library for the UdonSharp / VRChat
 
 ## 💡 Features
 
+- 🫥 Object teleporter by turning the object on or off
 - 🗞 Publish-Subscribe pattern component
 - 🌈 Logger with vivid colors
 - ⚙️ Some extended methods for the arrays, strings, and VRCPlayerApi
@@ -82,6 +83,19 @@ but be careful of circular references.
 #### `public override void OnNotify(Subject subject)`
 
 The callback is when a call is received from the subject.
+
+---
+
+### `PositionAnchor` class / extends `UdonSharpBehaviour`
+
+The component maintains coordinate information when active and inactive and
+switches coordinate information the moment the active state changes.
+
+#### Inspector fields
+
+- `Transform target`: The target transform is to be updated.
+- `Transform transformOnActive`: The coordinate information when active.
+- `Transform transformOnDeactive`: The coordinate information when inactive.
 
 ---
 

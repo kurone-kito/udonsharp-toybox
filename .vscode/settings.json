@@ -5,6 +5,7 @@
     "*.mat": "yaml",
     "*.meta": "yaml",
     "*.prefab": "yaml",
+    "*.unity": "css",
     "*.uss": "css",
     ".manifest": "json",
     "LICENSE": "plaintext"
