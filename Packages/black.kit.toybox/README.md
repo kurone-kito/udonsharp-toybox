@@ -104,6 +104,35 @@ Notify all observers.
 
 ---
 
+### `SyncBehaviour` _abstract_ class / extends `UdonSharpBehaviour`
+
+Abstract class with helper methods for synchronization.
+
+You can extend this class to implement synchronization classes.
+
+#### `public virtual void ChangeOwner()`
+
+Change the object owner to the local player.
+
+#### `public virtual void Sync()`
+
+Starts the syncing.
+
+#### `public virtual bool IsOwner()`
+
+Determines if the local player is the owner.
+
+True if the local player is the owner.
+
+#### `protected abstract void UpdateView()`
+
+Implement to update the view.
+
+The OnDeserialization method cannot be called explicitly.
+Therefore, instead, override this method to update the view.
+
+---
+
 ### Extension methods
 
 #### `bool string.AreAllCharsContained(string chars)`
