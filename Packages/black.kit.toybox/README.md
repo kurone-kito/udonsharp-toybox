@@ -8,11 +8,12 @@ My utilities library for the UdonSharp / VRChat
 
 ## 💡 Features
 
+- 🖱 UI parts with global sync
 - 🫥 Object teleporter by turning the object on or off
 - 🔓 (Statically) whitelist gimmick
 - 🗞 Publish-Subscribe pattern component
 - 🌈 Logger with vivid colors
-- ⚙️ Some extended methods for the arrays, strings, and VRCPlayerApi
+- ⚙️ Other features...
 
 ## 💻 System Requirements
 
@@ -56,6 +57,118 @@ All library components are in the `black.kit.toybox` namespace.
 ```csharp
 using black.kit.toybox;
 ```
+
+---
+
+### `GlobalScroll` class / extends `SyncBehaviour`
+
+The component synchronizes the scroll position of the `ScrollRect` uGUI
+component.
+
+For this component to work correctly, please follow these steps:
+
+1. place it on the same object as the `ScrollRect` component or manually
+   tie it.
+2. Set the following to `OnValueChanged (Vector2)` of the `ScrollRect`
+   component.
+   - Timing: `Runtime Only`
+   - Reference: the `GlobalScroll` component, which is placed on GameObject
+   - Call: `UdonBehaviour.SendCustomEvent (string)`
+   - Argument: `OnScroll`
+
+#### Synchronically fields
+
+Avoid modifying these variables by users who do not have ownership rights,
+as this may cause malfunctions. Also, if a user with ownership rights
+changes these variables, please perform synchronization immediately.
+
+- `Vector2 position = Vector2.up`: The scroll position to synchronize.
+- `Vector2 velocity = Vector2.zero`: The scroll velocity to synchronize.
+
+#### `public void OnScroll()`
+
+The callback when the scroll position is changed.
+
+#### `public void Reset()`
+
+Reset the scroll position to the top.
+
+#### `protected override void UpdateView()`
+
+The callback to update the view, e.g. the synchronized scroll position.
+
+---
+
+### `GlobalSlider` class / extends `SyncBehaviour`
+
+The component synchronizes the value of the `Slider` uGUI component.
+
+For this component to work correctly, please follow these steps:
+
+1. place it on the same object as the `Slider` component or manually tie it.
+2. Set the following to `OnValueChanged (Single)` of the `Slider`
+   component.
+   - Timing: `Runtime Only`
+   - Reference: the `GlobalToggle` component, which is placed on GameObject
+   - Call: `UdonBehaviour.SendCustomEvent (string)`
+   - Argument: `OnValueChanged`
+
+#### Synchronically fields
+
+Avoid modifying these variables by users who do not have ownership rights,
+as this may cause malfunctions. Also, if a user with ownership rights
+changes these variables, please perform synchronization immediately.
+
+- `public float value`: The scroll position to synchronize.
+
+#### `public void OnValueChanged()`
+
+The callback when the value is changed.
+
+#### `public void SetValue(float value)`
+
+Set the value to the slider.
+
+#### `protected override void UpdateView()`
+
+The callback to update the view, e.g. on synchronized the value.
+
+---
+
+### `GlobalToggle` class / extends `SyncBehaviour`
+
+The component synchronizes the scroll position of the `Toggle` uGUI
+component.
+
+For this component to work correctly, please follow these steps:
+
+1. place it on the same object as the `Toggle` component or manually tie it.
+2. Set the following to `OnValueChanged (Boolean)` of the `Toggle`
+   component.
+   - Timing: `Runtime Only`
+   - Reference: the `GlobalToggle` component, which is placed on GameObject
+   - Call: `UdonBehaviour.SendCustomEvent (string)`
+   - Argument: `OnToggle`
+
+#### Synchronically fields
+
+Avoid modifying these variables by users who do not have ownership rights,
+as this may cause malfunctions. Also, if a user with ownership rights
+changes these variables, please perform synchronization immediately.
+
+- `public bool value`: The value to synchronize.
+
+#### `public void OnToggle()`
+
+The callback when the value is changed.
+
+#### `public void SetValue(bool value)`
+
+Set the value to the toggle.
+
+#### `protected override void UpdateView()`
+
+The callback to update the view, e.g. on synchronized the value.
 
 ---
 

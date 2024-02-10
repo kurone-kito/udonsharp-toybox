@@ -18,11 +18,12 @@ My utilities library for the UdonSharp / VRChat
 
 ## 💡 Features
 
+- 🖱 UI parts with global sync
 - 🫥 Object teleporter by turning the object on or off
 - 🔓 (Statically) whitelist gimmick
 - 🗞 Publish-Subscribe pattern component
 - 🌈 Logger with vivid colors
-- ⚙️ Some extended methods for the arrays, strings, and VRCPlayerApi
+- ⚙️ Other features...
 
 ## License
 
