@@ -14,6 +14,9 @@ msgstr "The component maintains coordinate information when active and inactive 
 msgid "DETAIL_SUBJECT"
 msgstr "When the <b>Notify()</b> method is executed, the registered Observers are notified simultaneously."
 
+msgid "DETAIL_WHITELIST"
+msgstr "The allowlist to enable or disable the colliders and game objects. If local users are included in the allowlist, this component toggles between enabled and disabled states."
+
 msgid "WARN_AVOID_EMPTY_ARRAY"
 msgstr "To avoid extra load, it is recommended that the array's contents be packed as tightly as possible with no spaces."
 

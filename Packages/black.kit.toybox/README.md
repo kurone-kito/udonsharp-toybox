@@ -9,6 +9,7 @@ My utilities library for the UdonSharp / VRChat
 ## 💡 Features
 
 - 🫥 Object teleporter by turning the object on or off
+- 🔓 (Statically) whitelist gimmick
 - 🗞 Publish-Subscribe pattern component
 - 🌈 Logger with vivid colors
 - ⚙️ Some extended methods for the arrays, strings, and VRCPlayerApi
@@ -144,6 +145,22 @@ Implement to update the view.
 
 The OnDeserialization method cannot be called explicitly.
 Therefore, instead, override this method to update the view.
+
+---
+
+### `Whitelist` class / extends `UdonSharpBehaviour`
+
+The allowlist to enable or disable the colliders and game objects.
+
+If local users are included in the allowlist, this component toggles
+between enabled and disabled states.
+
+#### Inspector fields
+
+- `string[] displayNames`: The display names of the allowlist.  
+  It doesn't match the empty or null.
+- `Collider[] colliders`: Specify the colliders to flip the enabled state.
+- `GameObject[] objects`: Specify the game objects to flip the enabled state.
 
 ---
 

@@ -14,6 +14,9 @@ msgstr "このコンポーネントは、アクティブと非アクティブに
 msgid "DETAIL_SUBJECT"
 msgstr "<b>Notify()</b>メソッドを実行すると、登録されたObserverに同時に通知されます。"
 
+msgid "DETAIL_WHITELIST"
+msgstr "このコンポーネントに指定したユーザーのみ、登録しているオブジェクトやコライダーの有効・無効状態を反転します。"
+
 msgid "WARN_AVOID_EMPTY_ARRAY"
 msgstr "余分な負荷を避けるため、配列の内容はできるだけ空白を含まないように詰めることをお勧めします。"
 
