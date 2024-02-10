@@ -2,6 +2,7 @@
     "name": "black.kit.toybox",
     "rootNamespace": "black.kit.toybox",
     "references": [
+        "Unity.TextMeshPro",
         "VRC.SDK3",
         "VRC.SDKBase",
         "VRC.Udon",

@@ -29,10 +29,12 @@ words:
   - denoiser
   - kito
   - kuroné
+  - mathf
   - MSAA
   - nunit
   - occludee
   - udon
+  - ugui
   - vrcsdk
   - vrchat
 useGitignore: true
