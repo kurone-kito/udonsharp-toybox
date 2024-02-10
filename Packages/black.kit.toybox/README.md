@@ -148,6 +148,25 @@ Therefore, instead, override this method to update the view.
 
 ---
 
+### `TickingDown` class / extends `UdonSharpBehaviour`
+
+The component updates the date and time to the `Text` or `TextMeshProUGUI`
+uGUI component.
+
+For this component to work correctly, please follow these steps:
+
+1. place it on the same object as the `Text` or `TextMeshProUGUI` component
+   or manually tie it.
+
+#### `public void Tick()`
+
+The callback to update the date and time.
+
+This method is automatically called from within. _DO NOT CALL IT DIRECTLY_;
+it'll duplicate the calling cycle and can result in overloading.
+
+---
+
 ### `Whitelist` class / extends `UdonSharpBehaviour`
 
 The allowlist to enable or disable the colliders and game objects.

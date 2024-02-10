@@ -14,8 +14,17 @@ msgstr "このコンポーネントは、アクティブと非アクティブに
 msgid "DETAIL_SUBJECT"
 msgstr "<b>Notify()</b>メソッドを実行すると、登録されたObserverに同時に通知されます。"
 
+msgid "DETAIL_TICKING_DOWN"
+msgstr "このコンポーネントはテキストコンポーネントへ、日時情報を低負荷で渡せます。"
+
 msgid "DETAIL_WHITELIST"
 msgstr "このコンポーネントに指定したユーザーのみ、登録しているオブジェクトやコライダーの有効・無効状態を反転します。"
+
+msgid "USAGE_COMPONENT"
+msgstr "このコンポーネントを正しく動作するために、以下の手順を実行してください。"
+
+msgid "USAGE_TICKING_DOWN"
+msgstr "1.TextまたはTextMeshProUGUIコンポーネントと同じオブジェクトに配置するか、手動で紐づけてください。"
 
 msgid "WARN_AVOID_EMPTY_ARRAY"
 msgstr "余分な負荷を避けるため、配列の内容はできるだけ空白を含まないように詰めることをお勧めします。"

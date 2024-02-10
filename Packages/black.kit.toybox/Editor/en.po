@@ -14,8 +14,17 @@ msgstr "The component maintains coordinate information when active and inactive 
 msgid "DETAIL_SUBJECT"
 msgstr "When the <b>Notify()</b> method is executed, the registered Observers are notified simultaneously."
 
+msgid "DETAIL_TICKING_DOWN"
+msgstr "This component can send date and time information with a low load to the text component."
+
 msgid "DETAIL_WHITELIST"
 msgstr "The allowlist to enable or disable the colliders and game objects. If local users are included in the allowlist, this component toggles between enabled and disabled states."
+
+msgid "USAGE_COMPONENT"
+msgstr "For this component to work correctly, please follow these steps:"
+
+msgid "USAGE_TICKING_DOWN"
+msgstr "1. place it on the same object as the <b>Text</b> or <b>TextMeshProUGUI</b> component or manually tie it."
 
 msgid "WARN_AVOID_EMPTY_ARRAY"
 msgstr "To avoid extra load, it is recommended that the array's contents be packed as tightly as possible with no spaces."
