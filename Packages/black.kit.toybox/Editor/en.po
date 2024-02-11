@@ -23,6 +23,9 @@ msgstr "Use this ObserverHub when you have many Observers registered in a Subjec
 msgid "DETAIL_POSITION_ANCHOR"
 msgstr "The component maintains coordinate information when active and inactive and switches coordinate information the moment the active state changes."
 
+msgid "DETAIL_SEQUENCE_ACTIVE_RELAY_TO_ANIMATOR"
+msgstr "This component transfers parameters to the Animator component of the specified object according to a predetermined sequence when the active state changes."
+
 msgid "DETAIL_SUBJECT"
 msgstr "When the <b>Notify()</b> method is executed, the registered Observers are notified simultaneously."
 
@@ -76,6 +79,9 @@ msgstr "Reference: <b>This component</b>"
 
 msgid "USAGE_TICKING_DOWN"
 msgstr "1. place it on the same object as the <b>Text</b> or <b>TextMeshProUGUI</b> component or manually tie it."
+
+msgid "USAGE_TO_ANIMATOR"
+msgstr "1. place it on the same object as the <b>Animator</b> component or manually tie it."
 
 msgid "WARN_AVOID_EMPTY_ARRAY"
 msgstr "To avoid extra load, it is recommended that the array's contents be packed as tightly as possible with no spaces."
