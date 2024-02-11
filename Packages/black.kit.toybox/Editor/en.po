@@ -5,6 +5,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
 
+msgid "DETAIL_DOORBELL"
+msgstr "The component plays the notify sound when the player joins the world."
+
 msgid "DETAIL_GLOBAL_SCROLL"
 msgstr "The component synchronizes the scroll position of the ScrollRect UI component."
 
@@ -31,6 +34,9 @@ msgstr "The allowlist to enable or disable the colliders and game objects. If lo
 
 msgid "USAGE_COMPONENT"
 msgstr "For this component to work correctly, please follow these steps:"
+
+msgid "USAGE_DOORBELL"
+msgstr "1. place it on the same object as the <b>AudioSource</b> component or manually tie it."
 
 msgid "USAGE_GLOBAL_SCROLL_0"
 msgstr "1. place it on the same object as the ScrollRect component or manually tie it."

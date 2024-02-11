@@ -5,6 +5,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
 
+msgid "DETAIL_DOORBELL"
+msgstr "このコンポーネントは、プレーヤーがワールドに参加した際に指定した通知音を再生します。"
+
 msgid "DETAIL_GLOBAL_SCROLL"
 msgstr "このコンポーネントは、ScrollRectコンポーネントのスクロール位置を同期します。"
 
@@ -31,6 +34,9 @@ msgstr "このコンポーネントに指定したユーザーのみ、登録し
 
 msgid "USAGE_COMPONENT"
 msgstr "このコンポーネントを正しく動作するために、以下の手順を実行してください。"
+
+msgid "USAGE_DOORBELL"
+msgstr "1.AudioSourceコンポーネントと同一のオブジェクトに配置するか、手動でコンポーネントを紐づけてください。"
 
 msgid "USAGE_GLOBAL_SCROLL_0"
 msgstr "1.ScrollRectコンポーネントと同一のオブジェクトに配置するか、手動でコンポーネントを紐づけてください。"
