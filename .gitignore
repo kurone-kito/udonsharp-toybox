@@ -1,5 +1,14 @@
-# Created by https://www.toptal.com/developers/gitignore/api/linux,macos,unity,vim,visualstudiocode,windows
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,unity,vim,visualstudiocode,windows
+# Created by https://www.toptal.com/developers/gitignore/api/dotnetcore,linux,macos,unity,vim,visualstudiocode,windows
+# Edit at https://www.toptal.com/developers/gitignore?templates=dotnetcore,linux,macos,unity,vim,visualstudiocode,windows
+
+### DotnetCore ###
+# .NET Core build folders
+bin/
+obj/
+
+# Common node modules locations
+/node_modules
+/wwwroot/node_modules
 
 ### Linux ###
 *~
@@ -187,9 +196,17 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/linux,macos,unity,vim,visualstudiocode,windows
+# End of https://www.toptal.com/developers/gitignore/api/dotnetcore,linux,macos,unity,vim,visualstudiocode,windows
 
 ### THE PROJECT SPECIFIES #################################################
+
+### DotnetCore ###
+# DocFX
+**/DROP/
+**/TEMP/
+**/_site
+/Documents/**/packages/
+**/obj.meta
 
 ### Unity ###
 # Example scenes

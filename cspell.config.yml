@@ -6,6 +6,7 @@ dictionaries:
   - en-gb
   - en-us
   - fsharp
+  - lorem-ipsum
 enableGlobDot: true
 features:
   weighted-suggestions: true
@@ -24,10 +25,19 @@ ignorePaths:
   - Packages/*.json
   - ProjectSettings
 words:
+  - aniso
+  - atrous
+  - denoiser
   - kito
   - kuroné
+  - mathf
+  - MSAA
+  - nunit
+  - occludee
+  - spatialization
   - udon
+  - ugui
   - vrcsdk
   - vrchat
 useGitignore: true
-version: '0.2'
+version: "0.2"

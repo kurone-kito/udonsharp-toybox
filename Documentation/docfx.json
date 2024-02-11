@@ -1,0 +1,56 @@
+{
+  "build": {
+    "cleanupCacheHistory": false,
+    "content": [
+      {
+        "files": ["toc.yml", "index.md"]
+      },
+      {
+        "src": "api",
+        "files": ["*.yml", "index.md"],
+        "dest": "api"
+      }
+    ],
+    "disableGitFeatures": false,
+    "dest": "_site",
+    "fileMetadataFiles": [],
+    "globalMetadata": {
+      "_appTitle": "Example Unity documentation",
+      "_appFooter": "Example Unity documentation",
+      "_enableSearch": true
+    },
+    "globalMetadataFiles": [],
+    "keepFileLink": false,
+    "noLangKeyword": false,
+    "overwrite": [
+      {
+        "exclude": ["obj/**", "_site/**"],
+        "files": ["Packages/black.kit.toybox/**/*.md"],
+        "src": ".."
+      }
+    ],
+    "postProcessors": [],
+    "resource": [
+      {
+        "files": ["images/**"]
+      }
+    ],
+    "template": ["default"],
+    "xref": ["https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml"],
+    "xrefService": ["https://xref.docs.microsoft.com/query?uid={uid}"]
+  },
+  "metadata": [
+    {
+      "dest": "api",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false,
+      "filter": "filterConfig.yml",
+      "src": [
+        {
+          "files": ["Packages/black.kit.toybox/**/*.cs"],
+          "src": ".."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+
+msgid "DETAIL_DOORBELL"
+msgstr "このコンポーネントは、プレーヤーがワールドに参加した際に指定した通知音を再生します。"
+
+msgid "DETAIL_GLOBAL_SCROLL"
+msgstr "このコンポーネントは、ScrollRectコンポーネントのスクロール位置を同期します。"
+
+msgid "DETAIL_GLOBAL_SLIDER"
+msgstr "このコンポーネントは、Sliderコンポーネントの現在値を同期します。"
+
+msgid "DETAIL_GLOBAL_TOGGLE"
+msgstr "このコンポーネントは、Toggleコンポーネントの選択状態を同期します。"
+
+msgid "DETAIL_OBSERVER_HUB"
+msgstr "このコンポーネントは、Subjectに多くのObserverを登録して、管理しづらい場合に活用します。無限にネストできますが、循環参照に注意してください。"
+
+msgid "DETAIL_POSITION_ANCHOR"
+msgstr "このコンポーネントは、アクティブと非アクティブに転送する座標情報を保持し、アクティブ状態が変化した際に指定オブジェクトをそこへ転送させます。"
+
+msgid "DETAIL_SEQUENCE_ACTIVE_RELAY_TO_ANIMATOR"
+msgstr "このコンポーネントは、アクティブ状態が変化した際に指定オブジェクトのAnimatorコンポーネントへ、所定のシーケンスに従ってパラメーターを転送します。"
+
+msgid "DETAIL_SUBJECT"
+msgstr "<b>Notify()</b>メソッドを実行すると、登録されたObserverに同時に通知されます。"
+
+msgid "DETAIL_TICKING_DOWN"
+msgstr "このコンポーネントはテキストコンポーネントへ、日時情報を低負荷で渡せます。"
+
+msgid "DETAIL_WHITELIST"
+msgstr "このコンポーネントに指定したユーザーのみ、登録しているオブジェクトやコライダーの有効・無効状態を反転します。"
+
+msgid "USAGE_COMPONENT"
+msgstr "このコンポーネントを正しく動作するために、以下の手順を実行してください。"
+
+msgid "USAGE_DOORBELL"
+msgstr "1.AudioSourceコンポーネントと同一のオブジェクトに配置するか、手動でコンポーネントを紐づけてください。"
+
+msgid "USAGE_GLOBAL_SCROLL_0"
+msgstr "1.ScrollRectコンポーネントと同一のオブジェクトに配置するか、手動でコンポーネントを紐づけてください。"
+
+msgid "USAGE_GLOBAL_SCROLL_1"
+msgstr "2.ScrollRectコンポーネントの<b>値の変更時(Vector2)</b>へ、以下を設定してください。"
+
+msgid "USAGE_GLOBAL_SLIDER_0"
+msgstr "1.Sliderコンポーネントと同一のオブジェクトに配置するか、手動でコンポーネントを紐づけてください。"
+
+msgid "USAGE_GLOBAL_SLIDER_1"
+msgstr "2.Sliderコンポーネントの<b>値の変更時(Single)</b>へ、以下を設定してください。"
+
+msgid "USAGE_GLOBAL_TOGGLE_0"
+msgstr "1.Toggleコンポーネントと同一のオブジェクトに配置するか、手動でコンポーネントを紐づけてください。"
+
+msgid "USAGE_GLOBAL_TOGGLE_1"
+msgstr "2.Toggleコンポーネントの<b>値の変更時(Boolean)</b>へ、以下を設定してください。"
+
+msgid "USAGE_ON_SCROLL"
+msgstr "引数: <b>OnScroll</b>"
+
+msgid "USAGE_ON_TOGGLE"
+msgstr "引数: <b>OnToggle</b>"
+
+msgid "USAGE_ON_VALUE_CHANGED"
+msgstr "引数: <b>OnValueChanged</b>"
+
+msgid "USAGE_RUNTIME_ONLY"
+msgstr "タイミング: <b>Runtime Only</b>"
+
+msgid "USAGE_SEND_CUSTOM_EVENT"
+msgstr "呼び出し: <b>UdonBehaviour.SendCustomEvent (string)</b>"
+
+msgid "USAGE_THIS_COMPONENT"
+msgstr "参照: <b>このコンポーネント</b>"
+
+msgid "USAGE_TICKING_DOWN"
+msgstr "1.TextまたはTextMeshProUGUIコンポーネントと同じオブジェクトに配置するか、手動で紐づけてください。"
+
+msgid "USAGE_TO_ANIMATOR"
+msgstr "1.Animatorコンポーネントと同じオブジェクトに配置するか、手動で紐づけてください。"
+
+msgid "WARN_AVOID_EMPTY_ARRAY"
+msgstr "余分な負荷を避けるため、配列の内容はできるだけ空白を含まないように詰めることをお勧めします。"
+
+msgid "WARN_CIRCULAR_REFERENCE"
+msgstr "<b>循環参照に注意してください。無限ループに陥る可能性があります。</b>"

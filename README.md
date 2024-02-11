@@ -1,39 +1,30 @@
-# 🐱 VPM Project template for VRChat World
+<!-- markdownlint-disable MD024 -->
 
-My template for the VPM project (for VRChat worlds creation)
+# ⚙️ UdonSharp Toybox by Kuroné Kito
+
+![U# Toybox by Kuroné Kito](https://repository-images.githubusercontent.com/751466292/e693662b-cc02-4d99-ae74-636ae9563300)
+
+My utilities library for the UdonSharp / VRChat
+
+## ▶ System Requirements
+
+- [VRChat Creator Companion](https://vrchat.com/home/download)
+- Unity 2022.3.6f1
+- 🏝 Project of your world
 
 ## ▶ Getting Started
 
-### 1. Import the registry via the VRChat Creator Companion (VCC)
+[See the documentation](https://kurone-kito.github.io/udonsharp-toybox/docs/)
 
-(To be added)
+## 💡 Features
 
-### 2. Import the package to your project
-
-(To be added)
-
-### 3. Use the package, enjoy :D
-
-(To be added)
-
-## 🤖 Setting up the Automation
-
-Create a repository variable with the name and value described below.
-For details on how to create repository variables, see [Creating Configuration Variables for a Repository](https://docs.github.com/en/actions/learn-github-actions/variables#creating-configuration-variables-for-a-repository).
-Make sure you are creating a **repository variable**, and not a **repository secret**.
-
-- `PACKAGE_NAME`: the name of your package, like `com.vrchat.demo-template`.
-
-Finally, go to the "Settings" page for your repo, then choose "Pages", and look for the heading "Build and deployment". Change the "Source" dropdown from "Deploy from a branch" to "GitHub Actions".
-
-That's it!
-Some other notes:
-
-- We highly recommend you keep the existing folder structure of this template.
-  - The root of the project should be a Unity project.
-  - Your packages should be in the "Packages" directory.
-  - If you deviate from this folder structure, you'll need to update the paths that assume your package is in the "Packages" directory on lines 24, 38, 41 and 57.
-- If you want to store and generate your web files in a folder other than "Website" in the root, you can change the `listPublicDirectory` item [here in build-listing.yml](.github/workflows/build-listing.yml#L17).
+- 🖱 UI parts with global sync
+- 🫥 Object teleporter by turning the object on or off
+- 🔓 (Statically) whitelist gimmick
+- 🛎 Notify sound playing gimmick on player joined
+- 🗞 Publish-Subscribe pattern component
+- 🌈 Logger with vivid colors
+- ⚙️ Other features...
 
 ## License
 
