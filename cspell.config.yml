@@ -34,6 +34,7 @@ words:
   - MSAA
   - nunit
   - occludee
+  - spatialization
   - udon
   - ugui
   - vrcsdk

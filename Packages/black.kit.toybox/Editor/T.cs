@@ -3,6 +3,7 @@ namespace black.kit.toybox.Editor
     /// <summary>The uniques of the localization.</summary>
     public static class T
     {
+        public const string DETAIL_DOORBELL = nameof(DETAIL_DOORBELL);
         public const string DETAIL_GLOBAL_SCROLL = nameof(DETAIL_GLOBAL_SCROLL);
         public const string DETAIL_GLOBAL_SLIDER = nameof(DETAIL_GLOBAL_SLIDER);
         public const string DETAIL_GLOBAL_TOGGLE = nameof(DETAIL_GLOBAL_TOGGLE);
@@ -12,6 +13,7 @@ namespace black.kit.toybox.Editor
         public const string DETAIL_TICKING_DOWN = nameof(DETAIL_TICKING_DOWN);
         public const string DETAIL_WHITELIST = nameof(DETAIL_WHITELIST);
         public const string USAGE_COMPONENT = nameof(USAGE_COMPONENT);
+        public const string USAGE_DOORBELL = nameof(USAGE_DOORBELL);
         public const string USAGE_GLOBAL_SCROLL_0 = nameof(USAGE_GLOBAL_SCROLL_0);
         public const string USAGE_GLOBAL_SCROLL_1 = nameof(USAGE_GLOBAL_SCROLL_1);
         public const string USAGE_GLOBAL_SLIDER_0 = nameof(USAGE_GLOBAL_SLIDER_0);

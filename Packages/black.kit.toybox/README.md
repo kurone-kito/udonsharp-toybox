@@ -11,6 +11,7 @@ My utilities library for the UdonSharp / VRChat
 - 🖱 UI parts with global sync
 - 🫥 Object teleporter by turning the object on or off
 - 🔓 (Statically) whitelist gimmick
+- 🛎 Notify sound playing gimmick on player joined
 - 🗞 Publish-Subscribe pattern component
 - 🌈 Logger with vivid colors
 - ⚙️ Other features...
@@ -57,6 +58,22 @@ All library components are in the `black.kit.toybox` namespace.
 ```csharp
 using black.kit.toybox;
 ```
+
+---
+
+### `Doorbell` class / extends `UdonSharpBehaviour`
+
+The component plays the notify sound when the player joins the world.
+
+For this component to work correctly, please follow these steps:
+
+1. place it on the same object as the `AudioSource` component or manually
+   tie it.
+
+#### Inspector fields
+
+- `AudioSource source`: The audio source component to play the notify
+  sound.
 
 ---
 
