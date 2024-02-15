@@ -22,11 +22,12 @@ My utilities library for the UdonSharp / VRChat
 
 ### 1. Import the registry via the VRChat Creator Companion (VCC)
 
-(To be added)
+**[Add to VCC](vcc://vpm/addRepo?url=https%3A%2F%2Fkurone-kito.github.io%2Fvpm%2Findex.json)**
 
 ### 2. Import the UdonSharp Toybox package to your project
 
-(To be added)
+1. Click on the "Manage Project" button in the VCC
+2. Find the "UdonSharp Toybox" package and click on the "(+) Add package" button
 
 ### 3. Use the utilities, enjoy :D
 

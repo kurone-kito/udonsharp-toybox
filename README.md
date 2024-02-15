@@ -6,7 +6,7 @@
 
 My utilities library for the UdonSharp / VRChat
 
-## ▶ System Requirements
+## 💻 System Requirements
 
 - [VRChat Creator Companion](https://vrchat.com/home/download)
 - Unity 2022.3.6f1
