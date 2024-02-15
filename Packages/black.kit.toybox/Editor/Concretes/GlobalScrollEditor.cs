@@ -1,6 +1,4 @@
-using UdonSharp;
 using UnityEditor;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace black.kit.toybox.Editor
