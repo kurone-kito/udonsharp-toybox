@@ -9,6 +9,22 @@ namespace black.kit.toybox.Tests
     public sealed class TestArrayUtils
     {
         /// <summary>
+        /// Test for the <see cref="ArrayUtils.At{T}(T[], int)"/> method.
+        /// </summary>
+        [TestCase(new[] { 1, 2, 3 }, 0, ExpectedResult = 1)]
+        [TestCase(new[] { 1, 2, 3 }, 1, ExpectedResult = 2)]
+        [TestCase(new[] { 1, 2, 3 }, 2, ExpectedResult = 3)]
+        [TestCase(new[] { 1, 2, 3 }, 3, ExpectedResult = 1)]
+        [TestCase(new[] { 1, 2, 3 }, -1, ExpectedResult = 3)]
+        [TestCase(new[] { 1, 2, 3 }, -2, ExpectedResult = 2)]
+        [TestCase(new[] { 1, 2, 3 }, -3, ExpectedResult = 1)]
+        [TestCase(new[] { 1, 2, 3 }, -4, ExpectedResult = 3)]
+        [TestCase(new[] { 1, 2, 3 }, -5, ExpectedResult = 2)]
+        [TestCase(new[] { 1, 2, 3 }, -6, ExpectedResult = 1)]
+        [TestCase(null, 0, ExpectedResult = 0)]
+        public int At(int[] array, int index) => array.At(index);
+
+        /// <summary>
         /// Test for the <see cref="ArrayUtils.Contains{T}(T[], T)"/> method.
         /// </summary>
         [TestCase(new[] { 1, 2, 3 }, 2, ExpectedResult = true)]
