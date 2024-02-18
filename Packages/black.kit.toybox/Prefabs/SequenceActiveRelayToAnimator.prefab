@@ -78,14 +78,14 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 4912043422148069527}
   animator: {fileID: 1784054999478781897}
-  eventType: 2
-  triggersName: []
   boolName: 
-  boolSequence: 0100
-  intName: 
-  intSequence: 
   floatName: 
+  intName: 
+  triggerNames: []
+  boolSequence: 0100
+  intSequence: 
   floatSequence: []
+  eventType: 2
 --- !u!114 &4912043422148069527
 MonoBehaviour:
   m_ObjectHideFlags: 0

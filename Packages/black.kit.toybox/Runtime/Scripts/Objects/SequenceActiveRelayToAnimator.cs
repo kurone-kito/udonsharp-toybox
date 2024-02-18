@@ -20,18 +20,28 @@ namespace black.kit.toybox
     /// </summary>
     [AddComponentMenu("UdonSharp Toybox/Object/Sequence Active Relay To Animator")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public sealed class SequenceActiveRelayToAnimator : UdonSharpBehaviour
+    public sealed class SequenceActiveRelayToAnimator : ActiveRelayToAnimationBase
     {
-        /// <summary>The property name of the animator.</summary>
-        public const string NAME_ANIMATOR = nameof(animator);
-
 #pragma warning disable IDE0044
-        /// <summary>
-        /// The animator component to relay the active state.
-        /// </summary>
+        /// <summary>The triggers parameter name of the animator.</summary>
         [SerializeField]
-        [Tooltip("Specify the animator component to relay the active state.")]
-        private Animator animator;
+        [Tooltip("Specify the triggers parameter name of the animator.")]
+        private string[] triggerNames;
+
+        /// <summary>The bool sequence.</summary>
+        [SerializeField]
+        [Tooltip("Specify the bool sequence.")]
+        private bool[] boolSequence;
+
+        /// <summary>The int sequence.</summary>
+        [SerializeField]
+        [Tooltip("Specify the int sequence.")]
+        private int[] intSequence;
+
+        /// <summary>The float sequence.</summary>
+        [SerializeField]
+        [Tooltip("Specify the float sequence.")]
+        private float[] floatSequence;
 
         /// <summary>
         /// The event type to relay the active state.
@@ -39,123 +49,38 @@ namespace black.kit.toybox
         [SerializeField]
         [Tooltip("Specify the event type to relay the active state.")]
         private ActiveRelayToAnimatorEventType eventType;
-
-        /// <summary>The triggers parameter name of the animator.</summary>
-        [SerializeField]
-        [Tooltip("Specify the triggers parameter name of the animator.")]
-        private string[] triggersName;
-
-        /// <summary>The bool parameter name of the animator.</summary>
-        [SerializeField]
-        [Tooltip("Specify the bool parameter name of the animator.")]
-        private string boolName;
-
-        /// <summary>The bool sequence.</summary>
-        [SerializeField]
-        [Tooltip("Specify the bool sequence.")]
-        private bool[] boolSequence;
-
-        /// <summary>The int parameter name of the animator.</summary>
-        [SerializeField]
-        [Tooltip("Specify the int parameter name of the animator.")]
-        private string intName;
-
-        /// <summary>The int sequence.</summary>
-        [SerializeField]
-        [Tooltip("Specify the int sequence.")]
-        private int[] intSequence;
-
-        /// <summary>The float parameter name of the animator.</summary>
-        [SerializeField]
-        [Tooltip("Specify the float parameter name of the animator.")]
-        private string floatName;
-
-        /// <summary>The float sequence.</summary>
-        [SerializeField]
-        [Tooltip("Specify the float sequence.")]
-        private float[] floatSequence;
 #pragma warning restore IDE0044
         /// <summary>
         /// The IDs of the triggers parameter name of the animator.
         /// </summary>
         private int[] idsTriggers;
 
-        /// <summary>
-        /// The ID of the bool parameter name of the animator.
-        /// </summary>
-        private int idBool;
-
-        /// <summary>
-        /// The ID of the int parameter name of the animator.
-        /// </summary>
-        private int idInt;
-
-        /// <summary>
-        /// The ID of the float parameter name of the animator.
-        /// </summary>
-        private int idFloat;
-
-        /// <summary>Initialized the hashes.</summary>
-        private bool initialized;
-
         /// <summary>The index of the sequence.</summary>
         private int index;
 
-        /// <summary>Initialize the hashes.</summary>
-        private void Initialize()
+        /// <summary>The current bool value of the animator.</summary>
+        protected override bool CurrentBool => boolSequence.At(index);
+
+        /// <summary>The current float value of the animator.</summary>
+        protected override float CurrentFloat => floatSequence.At(index);
+
+        /// <summary>The current integer value of the animator.</summary>
+        protected override int CurrentInt => intSequence.At(index);
+
+        /// <summary>
+        /// Initialize the hashes of the triggers parameter name.
+        /// </summary>
+        protected override void PostInitialize()
         {
-            if (!animator || initialized)
-            {
-                return;
-            }
-            idsTriggers = new int[triggersName.Length];
-            for (var i = triggersName.Length; --i >= 0;)
-            {
-                idsTriggers[i] = Animator.StringToHash(triggersName[i]);
-            }
-            if (!string.IsNullOrEmpty(boolName))
-            {
-                idBool = Animator.StringToHash(boolName);
-            }
-            if (!string.IsNullOrEmpty(intName))
-            {
-                idInt = Animator.StringToHash(intName);
-            }
-            if (!string.IsNullOrEmpty(floatName))
-            {
-                idFloat = Animator.StringToHash(floatName);
-            }
-            initialized = true;
+            idsTriggers = CreateParameterIds(triggerNames);
         }
 
-        /// <summary>Update the sequence.</summary>
-        private void Sequence()
+        /// <summary>
+        /// Update the sequence of the triggers parameter name.
+        /// </summary>
+        protected override void PostSequence()
         {
-            if (!animator)
-            {
-                return;
-            }
-            if (!initialized)
-            {
-                Initialize();
-            }
-            if (idsTriggers.Length > 0)
-            {
-                animator.SetTrigger(
-                    idsTriggers[index % idsTriggers.Length]);
-            }
-            if (!string.IsNullOrEmpty(boolName))
-            {
-                animator.SetBool(idBool, boolSequence[index % boolSequence.Length]);
-            }
-            if (!string.IsNullOrEmpty(intName))
-            {
-                animator.SetInteger(idInt, intSequence[index % intSequence.Length]);
-            }
-            if (!string.IsNullOrEmpty(floatName))
-            {
-                animator.SetFloat(idFloat, floatSequence[index % floatSequence.Length]);
-            }
+            SetTrigger(index, triggerNames, idsTriggers);
             index++;
         }
 
