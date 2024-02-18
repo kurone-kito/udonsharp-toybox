@@ -5,6 +5,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
 
+msgid "DETAIL_CONDITIONAL_ACTIVE_RELAY_TO_ANIMATOR"
+msgstr "このコンポーネントは、アクティブ状態が変化した際に指定オブジェクトのAnimatorコンポーネントへ、所定のシーケンスに従ってパラメーターを転送します。SequenceActiveRelayToAnimatorとの大きな違いは、有効・無効毎に異なる状態を指定できることです。"
+
 msgid "DETAIL_DOORBELL"
 msgstr "このコンポーネントは、プレーヤーがワールドに参加した際に指定した通知音を再生します。"
 
