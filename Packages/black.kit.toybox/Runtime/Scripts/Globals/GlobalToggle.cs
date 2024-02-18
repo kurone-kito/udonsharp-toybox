@@ -26,11 +26,13 @@ namespace black.kit.toybox
         [NonSerialized, UdonSynced]
         public bool value;
 
+#pragma warning disable IDE0044
         /// <summary>
         /// The toggle component to synchronize the value.
         /// </summary>
         [SerializeField, Tooltip("Specify the toggle to synchronize.")]
         private Toggle toggle;
+#pragma warning restore IDE0044
 
         /// <summary>The callback when the value is changed.</summary>
         public void OnToggle()
@@ -85,10 +87,6 @@ namespace black.kit.toybox
         /// </summary>
         private void Start()
         {
-            if (!toggle)
-            {
-                toggle = GetComponent<Toggle>();
-            }
             if (!toggle)
             {
                 Log.Warn(WARN_NO_TOGGLE);
