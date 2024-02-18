@@ -4765,6 +4765,12 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4523132317699059513, guid: 2947e17e95b036b49b40bc16c5d41cc6,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 4523132317699059513, guid: 2947e17e95b036b49b40bc16c5d41cc6,
+        type: 3}
     - target: {fileID: 4756232874232789377, guid: 2947e17e95b036b49b40bc16c5d41cc6,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -4776,11 +4782,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlobalScroll
       objectReference: {fileID: 0}
-    - target: {fileID: 6010243368663101427, guid: 2947e17e95b036b49b40bc16c5d41cc6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7496660487265934202, guid: 2947e17e95b036b49b40bc16c5d41cc6,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -4789,7 +4790,7 @@ PrefabInstance:
     - target: {fileID: 7496660487265934202, guid: 2947e17e95b036b49b40bc16c5d41cc6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1909.1727
+      value: 557.00024
       objectReference: {fileID: 0}
     - target: {fileID: 8314906759889945362, guid: 2947e17e95b036b49b40bc16c5d41cc6,
         type: 3}
@@ -4890,11 +4891,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9085417353402668635, guid: 2947e17e95b036b49b40bc16c5d41cc6,
-        type: 3}
-      propertyPath: _syncMethod
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

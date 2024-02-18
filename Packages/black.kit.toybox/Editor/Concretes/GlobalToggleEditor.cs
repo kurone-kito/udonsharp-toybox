@@ -29,6 +29,7 @@ namespace black.kit.toybox.Editor
 
             serializedObject.Update();
             AutoCompleteObject<Toggle>(GlobalToggle.NAME_TOGGLE);
+            AutoCompleteObject<Subject>(SyncBehaviour.NAME_SUBJECT);
             serializedObject.ApplyModifiedProperties();
         }
     }

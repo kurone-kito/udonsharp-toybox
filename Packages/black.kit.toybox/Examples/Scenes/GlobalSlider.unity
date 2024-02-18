@@ -4850,11 +4850,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlobalSlider
       objectReference: {fileID: 0}
-    - target: {fileID: 959442503487451875, guid: fdef0e8962c335d49abc15dc1dcca30c,
-        type: 3}
-      propertyPath: _syncMethod
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3668365166000475805, guid: fdef0e8962c335d49abc15dc1dcca30c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4955,6 +4950,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4085060866474518830, guid: fdef0e8962c335d49abc15dc1dcca30c,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 4085060866474518830, guid: fdef0e8962c335d49abc15dc1dcca30c,
+        type: 3}
     - target: {fileID: 7169898684172622093, guid: fdef0e8962c335d49abc15dc1dcca30c,
         type: 3}
       propertyPath: m_AnchorMax.y

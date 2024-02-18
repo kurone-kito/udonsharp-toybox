@@ -29,6 +29,7 @@ namespace black.kit.toybox.Editor
 
             serializedObject.Update();
             AutoCompleteObject<ScrollRect>(GlobalScroll.NAME_SCROLL_RECT);
+            AutoCompleteObject<Subject>(SyncBehaviour.NAME_SUBJECT);
             serializedObject.ApplyModifiedProperties();
         }
     }
