@@ -30,40 +30,49 @@ namespace black.kit.toybox
         /// The animator component to relay the active state.
         /// </summary>
         [SerializeField]
+        [Tooltip("Specify the animator component to relay the active state.")]
         private Animator animator;
 
         /// <summary>
         /// The event type to relay the active state.
         /// </summary>
         [SerializeField]
+        [Tooltip("Specify the event type to relay the active state.")]
         private ActiveRelayToAnimatorEventType eventType;
 
         /// <summary>The triggers parameter name of the animator.</summary>
         [SerializeField]
+        [Tooltip("Specify the triggers parameter name of the animator.")]
         private string[] triggersName;
 
         /// <summary>The bool parameter name of the animator.</summary>
         [SerializeField]
+        [Tooltip("Specify the bool parameter name of the animator.")]
         private string boolName;
 
         /// <summary>The bool sequence.</summary>
         [SerializeField]
+        [Tooltip("Specify the bool sequence.")]
         private bool[] boolSequence;
 
         /// <summary>The int parameter name of the animator.</summary>
         [SerializeField]
+        [Tooltip("Specify the int parameter name of the animator.")]
         private string intName;
 
         /// <summary>The int sequence.</summary>
         [SerializeField]
+        [Tooltip("Specify the int sequence.")]
         private int[] intSequence;
 
         /// <summary>The float parameter name of the animator.</summary>
         [SerializeField]
+        [Tooltip("Specify the float parameter name of the animator.")]
         private string floatName;
 
         /// <summary>The float sequence.</summary>
         [SerializeField]
+        [Tooltip("Specify the float sequence.")]
         private float[] floatSequence;
 #pragma warning restore IDE0044
         /// <summary>
