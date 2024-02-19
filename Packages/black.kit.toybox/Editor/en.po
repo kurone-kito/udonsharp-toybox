@@ -5,6 +5,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
 
+
+msgid "DETAIL_CONDITIONAL_ACTIVE_RELAY_TO_ANIMATOR"
+msgstr "This component transfers parameters to the Animator component of the specified object according to a predetermined sequence when the active state changes. The significant difference from the SequenceActiveRelayToAnimator is that different states can be specified for each turn on and off."
+
 msgid "DETAIL_DOORBELL"
 msgstr "The component plays the notify sound when the player joins the world."
 

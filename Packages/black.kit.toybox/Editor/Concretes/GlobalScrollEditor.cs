@@ -1,6 +1,4 @@
-using UdonSharp;
 using UnityEditor;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace black.kit.toybox.Editor
@@ -31,6 +29,7 @@ namespace black.kit.toybox.Editor
 
             serializedObject.Update();
             AutoCompleteObject<ScrollRect>(GlobalScroll.NAME_SCROLL_RECT);
+            AutoCompleteObject<Subject>(SyncBehaviour.NAME_SUBJECT);
             serializedObject.ApplyModifiedProperties();
         }
     }

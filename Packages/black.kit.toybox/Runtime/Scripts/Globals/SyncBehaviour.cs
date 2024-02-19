@@ -15,6 +15,9 @@ namespace black.kit.toybox
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public abstract class SyncBehaviour : UdonSharpBehaviour
     {
+        /// <summary>The property name of the Subject component.</summary>
+        public const string NAME_SUBJECT = nameof(subject);
+
         /// <summary>
         /// Error messages in incomplete synchronization requirements.
         /// </summary>

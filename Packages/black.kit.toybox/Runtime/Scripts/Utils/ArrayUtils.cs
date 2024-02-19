@@ -7,6 +7,35 @@ namespace black.kit.toybox
     public static class ArrayUtils
     {
         /// <summary>
+        /// Returns the element at the specified index in the array.
+        /// </summary>
+        /// <remarks>
+        /// If the specified index is negative, elements counted from the
+        /// end are obtained. And also, If the specified index is outside
+        /// the range, the elements within the range are obtained by
+        /// calculating the remainder.
+        /// </remarks>
+        /// <typeparam name="T">Type of array elements</typeparam>
+        /// <param name="array">the array</param>
+        /// <param name="index">The index of the element to obtain</param>
+        /// <returns>
+        /// The element at the specified index in the array.
+        /// If null, the default value of the type.
+        /// </returns>
+        public static T At<T>(this T[] array, int index)
+        {
+            if (array == null)
+            {
+                return default;
+            }
+            if (index < 0)
+            {
+                index = array.Length + index % array.Length;
+            }
+            return array[index % array.Length];
+        }
+
+        /// <summary>
         /// Determines whether the specified array contains the specified
         /// value.
         /// </summary>

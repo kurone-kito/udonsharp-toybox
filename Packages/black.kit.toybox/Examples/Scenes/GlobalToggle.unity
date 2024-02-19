@@ -4916,6 +4916,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7071721116436205332, guid: db4ac7f98cb26fd44bd720be6f7b6e23,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 7071721116436205332, guid: db4ac7f98cb26fd44bd720be6f7b6e23,
+        type: 3}
     - target: {fileID: 7676167714769818559, guid: db4ac7f98cb26fd44bd720be6f7b6e23,
         type: 3}
       propertyPath: m_SizeDelta.y

@@ -3,6 +3,8 @@ namespace black.kit.toybox.Editor
     /// <summary>The uniques of the localization.</summary>
     public static class T
     {
+        public const string DETAIL_CONDITIONAL_ACTIVE_RELAY_TO_ANIMATOR =
+            nameof(DETAIL_CONDITIONAL_ACTIVE_RELAY_TO_ANIMATOR);
         public const string DETAIL_DOORBELL = nameof(DETAIL_DOORBELL);
         public const string DETAIL_GLOBAL_SCROLL = nameof(DETAIL_GLOBAL_SCROLL);
         public const string DETAIL_GLOBAL_SLIDER = nameof(DETAIL_GLOBAL_SLIDER);
