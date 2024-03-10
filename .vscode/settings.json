@@ -83,6 +83,9 @@
     "tag:unity3d.com,2011:1660057539 mapping"
   ],
   "yaml.schemas": {
+    "https://coderabbit.ai/integrations/coderabbit-overrides.v2.json": [
+      ".coderabbit.yaml"
+    ],
     "https://raw.githubusercontent.com/reviewpad/schemas/main/latest/schema.json": [
       "reviewpad.yml"
     ],
