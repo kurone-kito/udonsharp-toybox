@@ -28,11 +28,36 @@ namespace black.kit.toybox
             {
                 return default;
             }
+            return array[array.AtIndex(index)];
+        }
+
+        /// <summary>
+        /// Returns the index at the specified index in the array.
+        /// </summary>
+        /// <remarks>
+        /// If the specified index is negative, elements counted from the
+        /// end are obtained. And also, If the specified index is outside
+        /// the range, the elements within the range are obtained by
+        /// calculating the remainder.
+        /// </remarks>
+        /// <typeparam name="T">Type of array elements</typeparam>
+        /// <param name="array">the array</param>
+        /// <param name="index">The index of the element to obtain</param>
+        /// <returns>
+        /// The index at the specified index in the array.
+        /// If array is null, the negative value of the type.
+        /// </returns>
+        public static int AtIndex<T>(this T[] array, int index)
+        {
+            if (array == null)
+            {
+                return -1;
+            }
             if (index < 0)
             {
                 index = array.Length + index % array.Length;
             }
-            return array[index % array.Length];
+            return index % array.Length;
         }
 
         /// <summary>
