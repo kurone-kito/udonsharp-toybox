@@ -202,11 +202,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConditionalActiveRelayToAnimator
       objectReference: {fileID: 0}
-    - target: {fileID: 2679466421282912638, guid: a882c48af92fc0a4fa952268ad6ac93c,
-        type: 3}
-      propertyPath: _syncMethod
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3403450348366202044, guid: a882c48af92fc0a4fa952268ad6ac93c, type: 3}
     m_RemovedGameObjects: []
