@@ -9,6 +9,7 @@ namespace black.kit.toybox.Editor
         public const string DETAIL_GLOBAL_SCROLL = nameof(DETAIL_GLOBAL_SCROLL);
         public const string DETAIL_GLOBAL_SLIDER = nameof(DETAIL_GLOBAL_SLIDER);
         public const string DETAIL_GLOBAL_TOGGLE = nameof(DETAIL_GLOBAL_TOGGLE);
+        public const string DETAIL_GLOBAL_TOGGLES = nameof(DETAIL_GLOBAL_TOGGLES);
         public const string DETAIL_OBSERVER_HUB = nameof(DETAIL_OBSERVER_HUB);
         public const string DETAIL_POSITION_ANCHOR = nameof(DETAIL_POSITION_ANCHOR);
         public const string DETAIL_SEQUENCE_ACTIVE_RELAY_TO_ANIMATOR =
@@ -24,6 +25,8 @@ namespace black.kit.toybox.Editor
         public const string USAGE_GLOBAL_SLIDER_1 = nameof(USAGE_GLOBAL_SLIDER_1);
         public const string USAGE_GLOBAL_TOGGLE_0 = nameof(USAGE_GLOBAL_TOGGLE_0);
         public const string USAGE_GLOBAL_TOGGLE_1 = nameof(USAGE_GLOBAL_TOGGLE_1);
+        public const string USAGE_GLOBAL_TOGGLES_0 = nameof(USAGE_GLOBAL_TOGGLES_0);
+        public const string USAGE_GLOBAL_TOGGLES_1 = nameof(USAGE_GLOBAL_TOGGLES_1);
         public const string USAGE_ON_SCROLL = nameof(USAGE_ON_SCROLL);
         public const string USAGE_ON_TOGGLE = nameof(USAGE_ON_TOGGLE);
         public const string USAGE_ON_VALUE_CHANGED = nameof(USAGE_ON_VALUE_CHANGED);
