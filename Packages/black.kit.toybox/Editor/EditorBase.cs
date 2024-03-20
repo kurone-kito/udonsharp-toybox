@@ -1,6 +1,5 @@
 using System;
 using UdonSharp;
-using UnityEditor;
 using UnityEngine;
 
 namespace black.kit.toybox.Editor
@@ -10,15 +9,17 @@ namespace black.kit.toybox.Editor
     public abstract class EditorBase<Tb> : UnityEditor.Editor
         where Tb : UdonSharpBehaviour
     {
-        /// <summary>The unique identifier of the banner.</summary>
-        private const string BANNER_UNIQUE =
-            "0041afc9ac3aebd4c88ce9706afe240f";
+        /// <summary>The information of the banner.</summary>
+        private readonly BannerInit bannerInit;
 
         /// <summary>Initialize the editor.</summary>
         /// <param name="details">The details of the target.</param>
-        public EditorBase(string details) : base()
+        /// <param name="bannerInit">The information of the banner.</param>
+        public EditorBase(
+            string details, Lazy<BannerInit> bannerInit = null) : base()
         {
             this.details = details;
+            this.bannerInit = bannerInit?.Value ?? BannerInit.Toybox;
         }
 
         /// <summary>The default style of the inspector.</summary>
@@ -43,77 +44,46 @@ namespace black.kit.toybox.Editor
         /// </summary>
         /// <typeparam name="T">The type of the component.</typeparam>
         /// <param name="propertyName">The name of the property.</param>
-        protected void AutoCompleteObject<T>(string propertyName)
+        /// <returns>The component.</returns>
+        protected T AutoCompleteObject<T>(string propertyName)
             where T : Component
         {
-            var target = TypedTarget;
-            var component = target.GetComponent<T>();
             var prop = serializedObject.FindProperty(propertyName);
-            if (component && prop.objectReferenceValue == null)
+            if (prop.objectReferenceValue)
             {
-                prop.objectReferenceValue = component;
+                return prop.objectReferenceValue as T;
             }
+            var component = TypedTarget.GetComponent<T>();
+            prop.objectReferenceValue = component;
+            return component;
         }
 
         /// <summary>Draw the banner of the inspector.</summary>
-        protected void DrawBanner()
-        {
-            if (!banner)
-            {
-                LoadTexture();
-            }
-            if (!banner)
-            {
-                return;
-            }
-            const float PADDING = 20f;
-            var width = EditorGUIUtility.currentViewWidth - PADDING * 2f;
-            var rect = new Rect() { width = width, height = width * .5f };
-            var rect2 = GUILayoutUtility.GetRect(rect.width, rect.height);
-            rect.x = PADDING - 4f;
-            rect.y = rect2.y;
-            EditorGUILayout.Space();
-            GUI.DrawTexture(rect, banner, ScaleMode.StretchToFill);
-            EditorGUILayout.Space();
-        }
+        protected void DrawBanner() =>
+            EditorUtils.DrawBanner(
+                banner: LoadTexture(), aspectRatio: bannerInit.AspectRatio);
 
         /// <summary>
         /// Draw the list of the inspector.
         /// </summary>
         /// <param name="list">The list to draw.</param>
         /// <param name="selectable">The list is selectable.</param>
-        protected void DrawList(string[] list, bool selectable = false)
-        {
-            var style = defaultStyle.Value;
-            Array.ForEach(
-                list,
-                selectable
-                    ? item =>
-                        EditorGUILayout.SelectableLabel(
-                            L10n.Tr(item), style)
-                    : item =>
-                        EditorGUILayout.LabelField(L10n.Tr(item), style));
-        }
+        protected void DrawList(string[] list, bool selectable = false) =>
+            EditorUtils.DrawList(
+                list: list,
+                style: defaultStyle.Value,
+                options: new() { Selectable = selectable });
 
         /// <summary>Draw the description of the inspector.</summary>
-        protected void DrawDetails()
-        {
-            EditorGUILayout.BeginVertical(GUI.skin.box);
-            var style = defaultStyle.Value;
-            var className = TypedTarget.GetType().FullName;
-            EditorGUILayout.LabelField($"<b>{className}</b>", style);
-            EditorGUILayout.LabelField(details, style);
-            EditorGUILayout.EndVertical();
-            EditorGUILayout.Space();
-        }
+        protected void DrawDetails() =>
+            EditorUtils.DrawDetail<Tb>(
+                detail: details, style: defaultStyle.Value);
 
         /// <summary>Load the texture of the banner.</summary>
-        private void LoadTexture()
-        {
-            var path = AssetDatabase.GUIDToAssetPath(BANNER_UNIQUE);
-            banner = AssetDatabase.LoadAssetAtPath(
-                path, typeof(Texture)) as Texture;
-        }
+        /// <param name="Force">Force to load the texture.</param>
+        /// <returns>The texture of the banner.</returns>
+        private Texture LoadTexture(bool Force = false) =>
+            banner = (Force || !banner) ? bannerInit.LoadTexture() : banner;
 
 #pragma warning disable IDE0051
         /// <summary>The callback when the object is enabled.</summary>

@@ -2,7 +2,7 @@
 
 # ⚙️ UdonSharp Toybox by Kuroné Kito
 
-![U# Toybox by Kuroné Kito](https://repository-images.githubusercontent.com/751466292/e693662b-cc02-4d99-ae74-636ae9563300)
+![U# Toybox by Kuroné Kito](https://kurone-kito.github.io/udonsharp-toybox/docs/images/banner.png)
 
 My utilities library for the UdonSharp / VRChat
 
