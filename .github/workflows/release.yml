@@ -72,7 +72,7 @@ jobs:
 
       # Publish the Release to GitHub
       - name: Make Release
-        uses: softprops/action-gh-release@v0.1.15
+        uses: softprops/action-gh-release@v2.0.4
         with:
           files: |
             ${{ env.zipFile }}
