@@ -16,12 +16,13 @@ namespace black.kit.toybox.Editor
             string argument) : base(details)
         {
             this.usage = usage;
-            events = new[] {
-                T.USAGE_RUNTIME_ONLY,
-                T.USAGE_THIS_COMPONENT,
-                T.USAGE_SEND_CUSTOM_EVENT,
-                argument,
-            };
+            events = new[]
+                {
+                    T.USAGE_RUNTIME_ONLY,
+                    T.USAGE_THIS_COMPONENT,
+                    T.USAGE_SEND_CUSTOM_EVENT,
+                    argument,
+                };
         }
 
         /// <summary>The usage of the target.</summary>

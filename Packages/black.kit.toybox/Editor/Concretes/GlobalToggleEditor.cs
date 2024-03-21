@@ -11,10 +11,11 @@ namespace black.kit.toybox.Editor
         /// <summary>Initialize the editor.</summary>
         public GlobalToggleEditor() : base(
             details: L10n.Tr(T.DETAIL_GLOBAL_TOGGLE),
-            usage: new[] {
-                T.USAGE_GLOBAL_TOGGLE_0,
-                T.USAGE_GLOBAL_TOGGLE_1
-            },
+            usage: new[]
+                {
+                    T.USAGE_GLOBAL_TOGGLE_0,
+                    T.USAGE_GLOBAL_TOGGLE_1
+                },
             argument: T.USAGE_ON_TOGGLE)
         {
         }

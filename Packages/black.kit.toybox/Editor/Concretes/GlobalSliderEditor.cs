@@ -11,10 +11,11 @@ namespace black.kit.toybox.Editor
         /// <summary>Initialize the editor.</summary>
         public GlobalSliderEditor() : base(
             details: L10n.Tr(T.DETAIL_GLOBAL_SLIDER),
-            usage: new[] {
-                T.USAGE_GLOBAL_SLIDER_0,
-                T.USAGE_GLOBAL_SLIDER_1
-            },
+            usage: new[]
+                {
+                    T.USAGE_GLOBAL_SLIDER_0,
+                    T.USAGE_GLOBAL_SLIDER_1
+                },
             argument: T.USAGE_ON_VALUE_CHANGED)
         {
         }
