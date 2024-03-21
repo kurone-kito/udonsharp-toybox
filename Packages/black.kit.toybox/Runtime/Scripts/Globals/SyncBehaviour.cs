@@ -22,13 +22,19 @@ namespace black.kit.toybox
         /// Error messages in incomplete synchronization requirements.
         /// </summary>
         private const string ERR_INVALID_SYNC =
-            "A non-owner player attempted to synchronize.";
+            "Aboted to syncing: A non-owner player attempted to synchronize.";
 
 #pragma warning disable IDE0044
         /// <summary>The subject when synchronizing.</summary>
-        [SerializeField, Tooltip("(Optional) Specify the subject to synchronize.")]
+        [SerializeField]
+        [Tooltip("(Optional) Specify the subject to synchronize.")]
         private Subject subject;
 #pragma warning restore IDE0044
+
+        /// <summary>
+        /// The flag that indicates whether the object is initialized.
+        /// </summary>
+        protected bool Initialized { get; private set; }
 
         /// <summary>Change the object owner to the local player.</summary>
         public virtual void ChangeOwner()
@@ -85,11 +91,35 @@ namespace black.kit.toybox
             return player == null || Networking.IsOwner(player, gameObject);
         }
 
+        /// <summary>
+        /// Update the view when the component is enabled.
+        /// </summary>
+        protected virtual void OnEnable()
+        {
+            InitializeWhenFirst();
+            UpdateView();
+        }
+
+        /// <summary>Implement to initialize the view.</summary>
+        protected abstract void Initialize();
+
         /// <summary>Implement to update the view.</summary>
         /// <remarks>
         /// The OnDeserialization method cannot be called explicitly.
         /// Therefore, instead, override this method to update the view.
         /// </remarks>
         protected abstract void UpdateView();
+
+        /// <summary>
+        /// Initialize the object when it is first started.
+        /// </summary>
+        private void InitializeWhenFirst()
+        {
+            if (!Initialized)
+            {
+                Initialize();
+                Initialized = true;
+            }
+        }
     }
 }

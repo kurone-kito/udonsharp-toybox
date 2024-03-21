@@ -69,6 +69,20 @@ namespace black.kit.toybox
             OnScroll();
         }
 
+        /// <summary>Initialize the object.</summary>
+        protected override void Initialize()
+        {
+            if (!scrollRect)
+            {
+                Log.Warn(WARN_NO_SCROLL_RECT);
+            }
+            if (IsOwner())
+            {
+                position = scrollRect.normalizedPosition;
+                velocity = scrollRect.velocity;
+            }
+        }
+
         /// <summary>
         /// The callback to update the view,
         /// e.g. the synchronized scroll position.
@@ -82,23 +96,5 @@ namespace black.kit.toybox
             scrollRect.normalizedPosition = position;
             scrollRect.velocity = velocity;
         }
-
-#pragma warning disable IDE0051
-        /// <summary>
-        /// Update the view when the component is enabled.
-        /// </summary>
-        private void OnEnable() => UpdateView();
-
-        /// <summary>
-        /// Update the target transform when the component is started.
-        /// </summary>
-        private void Start()
-        {
-            if (!scrollRect)
-            {
-                Log.Warn(WARN_NO_SCROLL_RECT);
-            }
-        }
-#pragma warning restore IDE0051
     }
 }

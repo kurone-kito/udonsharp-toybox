@@ -52,15 +52,29 @@ namespace black.kit.toybox
             {
                 return;
             }
-            if (toggle.isOn != value)
-            {
-                UpdateView();
-            }
             if (this.value != value)
             {
                 ChangeOwner();
                 this.value = value;
                 Sync();
+            }
+            if (toggle.isOn != value)
+            {
+                UpdateView();
+            }
+        }
+
+        /// <summary>Initialize the object.</summary>
+        protected override void Initialize()
+        {
+            if (!toggle)
+            {
+                Log.Warn(WARN_NO_TOGGLE);
+                return;
+            }
+            if (IsOwner())
+            {
+                value = toggle.isOn;
             }
         }
 
@@ -75,28 +89,5 @@ namespace black.kit.toybox
                 toggle.isOn = value;
             }
         }
-
-#pragma warning disable IDE0051
-        /// <summary>
-        /// Update the view when the component is enabled.
-        /// </summary>
-        private void OnEnable() => UpdateView();
-
-        /// <summary>
-        /// Update the target transform when the component is started.
-        /// </summary>
-        private void Start()
-        {
-            if (!toggle)
-            {
-                Log.Warn(WARN_NO_TOGGLE);
-                return;
-            }
-            if (IsOwner())
-            {
-                value = toggle.isOn;
-            }
-        }
-#pragma warning restore IDE0051
     }
 }
