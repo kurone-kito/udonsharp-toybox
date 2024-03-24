@@ -4850,6 +4850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlobalSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 1649898333218085573, guid: fdef0e8962c335d49abc15dc1dcca30c,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3668365166000475805, guid: fdef0e8962c335d49abc15dc1dcca30c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4958,8 +4963,18 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 7169898684172622093, guid: fdef0e8962c335d49abc15dc1dcca30c,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169898684172622093, guid: fdef0e8962c335d49abc15dc1dcca30c,
+        type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169898684172622093, guid: fdef0e8962c335d49abc15dc1dcca30c,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7169898684172622093, guid: fdef0e8962c335d49abc15dc1dcca30c,
         type: 3}
@@ -4972,6 +4987,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8709854311321467568, guid: fdef0e8962c335d49abc15dc1dcca30c,
         type: 3}
+    - target: {fileID: 9156592135232950731, guid: fdef0e8962c335d49abc15dc1dcca30c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9156592135232950731, guid: fdef0e8962c335d49abc15dc1dcca30c,
         type: 3}
       propertyPath: m_AnchorMax.y

@@ -51,15 +51,29 @@ namespace black.kit.toybox
             {
                 return;
             }
-            if (!Mathf.Approximately(slider.value, value))
-            {
-                UpdateView();
-            }
             if (!Mathf.Approximately(this.value, value))
             {
                 ChangeOwner();
                 this.value = value;
                 Sync();
+            }
+            if (!Mathf.Approximately(slider.value, value))
+            {
+                UpdateView();
+            }
+        }
+
+        /// <summary>Initialize the object.</summary>
+        protected override void Initialize()
+        {
+            if (!slider)
+            {
+                Log.Warn(WARN_NO_SLIDER);
+                return;
+            }
+            if (IsOwner())
+            {
+                value = slider.value;
             }
         }
 
@@ -74,28 +88,5 @@ namespace black.kit.toybox
                 slider.value = value;
             }
         }
-
-#pragma warning disable IDE0051
-        /// <summary>
-        /// Update the view when the component is enabled.
-        /// </summary>
-        private void OnEnable() => UpdateView();
-
-        /// <summary>
-        /// Update the target transform when the component is started.
-        /// </summary>
-        private void Start()
-        {
-            if (!slider)
-            {
-                Log.Warn(WARN_NO_SLIDER);
-                return;
-            }
-            if (IsOwner())
-            {
-                value = slider.value;
-            }
-        }
-#pragma warning restore IDE0051
     }
 }

@@ -4720,11 +4720,6 @@ PrefabInstance:
       propertyPath: m_Size
       value: 0.4560547
       objectReference: {fileID: 0}
-    - target: {fileID: 2318567500591750572, guid: 2947e17e95b036b49b40bc16c5d41cc6,
-        type: 3}
-      propertyPath: m_Value
-      value: -38.758823
-      objectReference: {fileID: 0}
     - target: {fileID: 2413894905822121920, guid: 2947e17e95b036b49b40bc16c5d41cc6,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4790,7 +4785,7 @@ PrefabInstance:
     - target: {fileID: 7496660487265934202, guid: 2947e17e95b036b49b40bc16c5d41cc6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 557.00024
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 8314906759889945362, guid: 2947e17e95b036b49b40bc16c5d41cc6,
         type: 3}
@@ -4955,7 +4950,7 @@ MonoBehaviour:
     m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
-    m_LineSpacing: 1.45
+    m_LineSpacing: 1.6
   m_Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel nunc
     id dui lacinia fermentum. Pellentesque mollis odio vestibulum dolor aliquam,
     id sagittis velit eleifend. Donec auctor, dolor eget volutpat egestas, metus
@@ -4970,7 +4965,6 @@ MonoBehaviour:
     Aliquam sit amet maximus erat, vel rhoncus sapien.
 
 
-
     Praesent eget augue
     pretium, sodales urna sed, lacinia magna. Cras tempor aliquam commodo. Quisque
     eleifend erat id lectus pellentesque vestibulum. Vestibulum lacinia mi dui, sed
@@ -4980,13 +4974,11 @@ MonoBehaviour:
     a.
 
 
-
     Ut pharetra mi nibh, ac porta nisl egestas vel. Nullam et lorem ipsum.
     Fusce et nibh ut ex laoreet faucibus vel et urna. Morbi euismod eget eros sit
     amet cursus. Praesent venenatis felis at erat sollicitudin aliquam. Praesent
     nec nulla non quam finibus dapibus. Sed volutpat tellus at feugiat viverra. Sed
     finibus purus egestas mattis auctor.
-
 
 
     Pellentesque habitant morbi tristique
@@ -4997,7 +4989,6 @@ MonoBehaviour:
     dui. Ut sed dui finibus, sagittis dui quis, eleifend metus. Donec vel sapien
     suscipit, vulputate dolor vitae, eleifend arcu. Interdum et malesuada fames ac
     ante ipsum primis in faucibus. Mauris at leo vel ipsum convallis malesuada.
-
 
 
     Praesent

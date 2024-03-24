@@ -20,6 +20,9 @@ msgstr "このコンポーネントは、Sliderコンポーネントの現在値
 msgid "DETAIL_GLOBAL_TOGGLE"
 msgstr "このコンポーネントは、Toggleコンポーネントの選択状態を同期します。"
 
+msgid "DETAIL_GLOBAL_TOGGLES"
+msgstr "このコンポーネントは、ToggleGroupコンポーネントに紐づく複数のToggleコンポーネントに対して、選択状態を同期します。"
+
 msgid "DETAIL_OBSERVER_HUB"
 msgstr "このコンポーネントは、Subjectに多くのObserverを登録して、管理しづらい場合に活用します。無限にネストできますが、循環参照に注意してください。"
 
@@ -61,6 +64,12 @@ msgstr "1.Toggleコンポーネントと同一のオブジェクトに配置す�
 
 msgid "USAGE_GLOBAL_TOGGLE_1"
 msgstr "2.Toggleコンポーネントの<b>値の変更時(Boolean)</b>へ、以下を設定してください。"
+
+msgid "USAGE_GLOBAL_TOGGLES_0"
+msgstr "1.ToggleGroupコンポーネントと同一のオブジェクトに配置するか、手動でコンポーネントを紐づけてください。"
+
+msgid "USAGE_GLOBAL_TOGGLES_1"
+msgstr "2.ToggleGroupコンポーネントに紐づいた、各Toggleコンポーネントにおける<b>値の変更時(Boolean)</b>へ、以下を設定してください。"
 
 msgid "USAGE_ON_SCROLL"
 msgstr "引数: <b>OnScroll</b>"

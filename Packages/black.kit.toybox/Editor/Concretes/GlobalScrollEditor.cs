@@ -11,10 +11,11 @@ namespace black.kit.toybox.Editor
         /// <summary>Initialize the editor.</summary>
         public GlobalScrollEditor() : base(
             details: L10n.Tr(T.DETAIL_GLOBAL_SCROLL),
-            usage: new[] {
-                T.USAGE_GLOBAL_SCROLL_0,
-                T.USAGE_GLOBAL_SCROLL_1
-            },
+            usage: new[]
+                {
+                    T.USAGE_GLOBAL_SCROLL_0,
+                    T.USAGE_GLOBAL_SCROLL_1
+                },
             argument: T.USAGE_ON_SCROLL)
         {
         }
