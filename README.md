@@ -26,6 +26,11 @@ My utilities library for the UdonSharp / VRChat
 - 🌈 Logger with vivid colors
 - ⚙️ Other features...
 
+## Contributing
+
+Welcome to contribute to this repository! For more details,
+please refer to [CONTRIBUTING.md](.github/CONTRIBUTING.md).
+
 ## License
 
 This repository is licensed under the [MIT License](LICENSE).
