@@ -221,3 +221,7 @@ $RECYCLE.BIN/
 
 # Others
 debug.log*
+
+### Others ###
+Packages/black.kit.*/LICENSE
+Packages/black.kit.*/README.md
