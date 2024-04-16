@@ -101,10 +101,13 @@ namespace black.kit.toybox
             {
                 toggleGroup.SetAllTogglesOff();
             }
-            var toggle = toggles[index];
-            if (toggle && !toggle.isOn)
+            else
             {
-                toggle.isOn = true;
+                var toggle = toggles[index];
+                if (toggle && !toggle.isOn)
+                {
+                    toggle.isOn = true;
+                }
             }
         }
 
