@@ -69,10 +69,6 @@ namespace black.kit.toybox
             }
             if (this.index != index)
             {
-                UpdateView();
-            }
-            if (this.index != index)
-            {
                 ChangeOwner();
                 this.index = index;
                 Sync();
