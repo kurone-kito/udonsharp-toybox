@@ -58,10 +58,6 @@ namespace black.kit.toybox
                 this.value = value;
                 Sync();
             }
-            if (toggle.isOn != value)
-            {
-                UpdateView();
-            }
         }
 
         /// <summary>Initialize the object.</summary>

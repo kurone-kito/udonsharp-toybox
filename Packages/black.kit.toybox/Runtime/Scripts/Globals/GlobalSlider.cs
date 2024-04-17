@@ -57,10 +57,6 @@ namespace black.kit.toybox
                 this.value = value;
                 Sync();
             }
-            if (!Mathf.Approximately(slider.value, value))
-            {
-                UpdateView();
-            }
         }
 
         /// <summary>Initialize the object.</summary>
