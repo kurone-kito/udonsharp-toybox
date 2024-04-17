@@ -16,10 +16,20 @@ namespace black.kit.toybox.Editor
         /// <param name="details">The details of the target.</param>
         /// <param name="bannerInit">The information of the banner.</param>
         public EditorBase(
-            string details, Lazy<BannerInit> bannerInit = null) : base()
+            string details, Lazy<BannerInit> bannerInit = null)
+            : this(
+                details: details,
+                bannerInit: bannerInit?.Value ?? BannerInit.Toybox)
+        {
+        }
+
+        /// <summary>Initialize the editor.</summary>
+        /// <param name="details">The details of the target.</param>
+        /// <param name="bannerInit">The information of the banner.</param>
+        public EditorBase(string details, BannerInit bannerInit) : base()
         {
             this.details = details;
-            this.bannerInit = bannerInit?.Value ?? BannerInit.Toybox;
+            this.bannerInit = bannerInit;
         }
 
         /// <summary>The default style of the inspector.</summary>
