@@ -196,6 +196,7 @@ MonoBehaviour:
   contentOther: 0
   releasePublic: 0
   unityVersion: 2022.3.6f1
+  udonProducts: []
   Name: 
   NSFW: 0
   SpawnPosition: {x: 0, y: 0, z: 0}
@@ -259,6 +260,7 @@ MonoBehaviour:
   NetworkIDs:
   - gameObject: {fileID: 2934898491204400251}
     ID: 0
+    SerializedTypeNames: []
   portraitCameraPositionOffset: {x: 0, y: 0, z: 0}
   portraitCameraRotationOffset: {x: 0, y: 1, z: 0, w: -0.00000004371139}
 --- !u!114 &4690406297278745075
