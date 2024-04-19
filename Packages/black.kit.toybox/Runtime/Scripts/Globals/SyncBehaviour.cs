@@ -22,7 +22,7 @@ namespace black.kit.toybox
         /// Error messages in incomplete synchronization requirements.
         /// </summary>
         private const string ERR_INVALID_SYNC =
-            "Aboted to syncing: A non-owner player attempted to synchronize.";
+            "Aborted to syncing: A non-owner player attempted to synchronize.";
 
 #pragma warning disable IDE0044
         /// <summary>The subject when synchronizing.</summary>

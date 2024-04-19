@@ -1,6 +1,8 @@
 using System;
 using UdonSharp;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace black.kit.toybox.Editor
 {
@@ -16,10 +18,20 @@ namespace black.kit.toybox.Editor
         /// <param name="details">The details of the target.</param>
         /// <param name="bannerInit">The information of the banner.</param>
         public EditorBase(
-            string details, Lazy<BannerInit> bannerInit = null) : base()
+            string details, Lazy<BannerInit> bannerInit = null)
+            : this(
+                details: details,
+                bannerInit: bannerInit?.Value ?? BannerInit.Toybox)
+        {
+        }
+
+        /// <summary>Initialize the editor.</summary>
+        /// <param name="details">The details of the target.</param>
+        /// <param name="bannerInit">The information of the banner.</param>
+        public EditorBase(string details, BannerInit bannerInit) : base()
         {
             this.details = details;
-            this.bannerInit = bannerInit?.Value ?? BannerInit.Toybox;
+            this.bannerInit = bannerInit;
         }
 
         /// <summary>The default style of the inspector.</summary>
@@ -56,6 +68,32 @@ namespace black.kit.toybox.Editor
             var component = TypedTarget.GetComponent<T>();
             prop.objectReferenceValue = component;
             return component;
+        }
+
+        /// <summary>Complete the toggles of the specified array.</summary>
+        /// <param name="toggleGroup">The toggle group.</param>
+        /// <param name="arrayProp">
+        /// The serialized property of the array.
+        /// </param>
+        /// <returns>The toggles of the array.</returns>
+        protected Toggle[] CompleteToggles(
+            ToggleGroup toggleGroup, SerializedProperty arrayProp)
+        {
+            var array = toggleGroup.GetToggles();
+            if (arrayProp != null && arrayProp.isArray && array != null)
+            {
+                var length = array.Length;
+                if (arrayProp.arraySize != length)
+                {
+                    arrayProp.arraySize = length;
+                }
+                for (var i = length; --i >= 0;)
+                {
+                    arrayProp.GetArrayElementAtIndex(i).objectReferenceValue =
+                        array[i];
+                }
+            }
+            return array;
         }
 
         /// <summary>Draw the banner of the inspector.</summary>

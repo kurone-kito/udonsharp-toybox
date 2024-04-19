@@ -69,10 +69,6 @@ namespace black.kit.toybox
             }
             if (this.index != index)
             {
-                UpdateView();
-            }
-            if (this.index != index)
-            {
                 ChangeOwner();
                 this.index = index;
                 Sync();
@@ -105,10 +101,13 @@ namespace black.kit.toybox
             {
                 toggleGroup.SetAllTogglesOff();
             }
-            var toggle = toggles[index];
-            if (toggle && !toggle.isOn)
+            else
             {
-                toggle.isOn = true;
+                var toggle = toggles[index];
+                if (toggle && !toggle.isOn)
+                {
+                    toggle.isOn = true;
+                }
             }
         }
 
