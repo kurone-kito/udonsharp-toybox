@@ -9,6 +9,7 @@
     "*.prefab": "yaml",
     "*.unity": "yaml",
     "*.uss": "css",
+    ".imgbotconfig": "json",
     ".manifest": "json",
     "LICENSE": "plaintext"
   },
