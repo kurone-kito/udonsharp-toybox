@@ -15,6 +15,20 @@ namespace black.kit.toybox
         /// True if the string contains all the characters
         /// in the specified string,
         /// </returns>
+        /// <example>
+        /// <code>
+        /// <![CDATA[
+        /// "bcd".AreAllCharsContained("abcde"); // true
+        /// "bcd".AreAllCharsContained("bcd"); // true
+        /// "abc".AreAllCharsContained("bcd"); // false
+        /// "abc".AreAllCharsContained("def"); // false
+        /// "".AreAllCharsContained("abc"); // true
+        /// "abc".AreAllCharsContained(""); // false
+        /// "abc".AreAllCharsContained(null); // false
+        /// "".AreAllCharsContained(""); // true
+        /// ]]>
+        /// </code>
+        /// </example>
         public static bool AreAllCharsContained(
             this string target, string chars)
         {

@@ -10,6 +10,32 @@ namespace black.kit.toybox
     /// This component can send date and time information with a low load
     /// to the Text or TextMeshProUGUI uGUI component.
     /// </summary>
+    /// <remarks>
+    /// Usage (in the inspector of Unity Editor):
+    /// <list type="number">
+    /// <item>
+    /// <description>
+    /// Add this component or prefab to the scene.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the Text (and|or) TextMeshProUGUI component to display the
+    /// date and time.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the format to display the date and time.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the interval to update the date and time.
+    /// </description>
+    /// </item>
+    /// </list>
+    /// </remarks>
     [AddComponentMenu("UdonSharp Toybox/UI/Ticking Down")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public sealed class TickingDown : UdonSharpBehaviour

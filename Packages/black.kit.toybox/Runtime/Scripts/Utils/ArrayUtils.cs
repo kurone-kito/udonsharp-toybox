@@ -16,12 +16,29 @@ namespace black.kit.toybox
         /// calculating the remainder.
         /// </remarks>
         /// <typeparam name="T">Type of array elements</typeparam>
-        /// <param name="array">the array</param>
+        /// <param name="array">
+        /// The array. If the array is null, returns the default value.
+        /// </param>
         /// <param name="index">The index of the element to obtain</param>
         /// <returns>
         /// The element at the specified index in the array.
         /// If null, the default value of the type.
         /// </returns>
+        /// <example>
+        /// <code>
+        /// <![CDATA[
+        /// int[] array = { 1, 2, 3 };
+        /// array.At(0); // 1
+        /// array.At(1); // 2
+        /// array.At(2); // 3
+        /// array.At(3); // 1
+        /// array.At(-1); // 3
+        /// array.At(-2); // 2
+        /// array.At(-3); // 1
+        /// array.At(-4); // 3
+        /// ]]>
+        /// </code>
+        /// </example>
         public static T At<T>(this T[] array, int index)
         {
             if (array == null)
@@ -41,12 +58,29 @@ namespace black.kit.toybox
         /// calculating the remainder.
         /// </remarks>
         /// <typeparam name="T">Type of array elements</typeparam>
-        /// <param name="array">the array</param>
+        /// <param name="array">
+        /// The array. If the array is null, returns the negative value.
+        /// </param>
         /// <param name="index">The index of the element to obtain</param>
         /// <returns>
         /// The index at the specified index in the array.
         /// If array is null, the negative value of the type.
         /// </returns>
+        /// <example>
+        /// <code>
+        /// <![CDATA[
+        /// int[] array = { 1, 2, 3 };
+        /// array.AtIndex(0); // 0
+        /// array.AtIndex(1); // 1
+        /// array.AtIndex(2); // 2
+        /// array.AtIndex(3); // 0
+        /// array.AtIndex(-1); // 2
+        /// array.AtIndex(-2); // 1
+        /// array.AtIndex(-3); // 0
+        /// array.AtIndex(-4); // 2
+        /// ]]>
+        /// </code>
+        /// </example>
         public static int AtIndex<T>(this T[] array, int index)
         {
             if (array == null)
@@ -65,12 +99,23 @@ namespace black.kit.toybox
         /// value.
         /// </summary>
         /// <typeparam name="T">Type of array elements</typeparam>
-        /// <param name="array">Array</param>
+        /// <param name="array">
+        /// The array. If the array is null, returns false.
+        /// </param>
         /// <param name="value">The value to contains</param>
         /// <returns>
         /// True if the specified array contains the specified value.
         /// Otherwise, false.
         /// </returns>
+        /// <example>
+        /// <code>
+        /// <![CDATA[
+        /// int[] array = { 1, 2, 3 };
+        /// array.Contains(2); // true
+        /// array.Contains(4); // false
+        /// ]]>
+        /// </code>
+        /// </example>
         public static bool Contains<T>(
             this T[] array, T value) where T : IEquatable<T>
         {
@@ -91,8 +136,24 @@ namespace black.kit.toybox
         /// <summary>
         /// Batch setting of game object activation status.
         /// </summary>
-        /// <param name="array">Array of game objects</param>
+        /// <param name="array">
+        /// Array of game objects. If the array is null, do nothing.
+        /// </param>
         /// <param name="active">New activation status</param>
+        /// <remarks>
+        /// If the elements contain null or invalid, it is ignored,
+        /// but we recommend removing them for performance reasons.
+        /// </remarks>
+        /// <example>
+        /// <code>
+        /// <![CDATA[
+        /// [SerializeField] private GameObject[] objects;
+        /// [SerializeField] private Toggle toggle;
+        ///
+        /// public void OnValueChanged() => objects.SetActive(toggle.isOn);
+        /// ]]>
+        /// </code>
+        /// </example>
         public static void SetActive(this GameObject[] array, bool active)
         {
             if (array == null)

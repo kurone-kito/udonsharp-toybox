@@ -8,6 +8,21 @@ namespace black.kit.toybox
     /// The component plays the notify sound when the player joins the
     /// world.
     /// </summary>
+    /// <remarks>
+    /// Usage (in the inspector of Unity Editor):
+    /// <list type="number">
+    /// <item>
+    /// <description>
+    /// Add this component or prefab to the scene.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the audio source to play the notify sound.
+    /// </description>
+    /// </item>
+    /// </list>
+    /// </remarks>
     [AddComponentMenu("UdonSharp Toybox/Sounds/Doorbell")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public sealed class Doorbell : UdonSharpBehaviour

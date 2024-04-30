@@ -8,6 +8,44 @@ namespace black.kit.toybox
     /// <summary>
     /// The component synchronizes the value of the Slider UI component.
     /// </summary>
+    /// <remarks>
+    /// Usage (in the inspector of Unity Editor):
+    /// <list type="number">
+    /// <item>
+    /// <description>
+    /// Add this component on the same object as the Slider component.
+    /// If the component is not found on the same object, you should
+    /// specify the Slider component in the <c>Slider</c> field.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Set the following to <c>OnValueChanged (Single)</c> of the tied
+    /// Slider component.
+    /// </description>
+    /// </item>
+    /// </list>
+    /// <list type="table">
+    /// <item>
+    /// <term>Emission</term>
+    /// <description>Runtime Only</description>
+    /// </item>
+    /// <item>
+    /// <term>Reference</term>
+    /// <description>Specify this component in hierarchy</description>
+    /// </item>
+    /// <item>
+    /// <term>Function</term>
+    /// <description>
+    /// <c>UdonBehaviour.SendCustomEvent (string)</c>
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <term>Argument</term>
+    /// <description><c>OnValueChanged</c></description>
+    /// </item>
+    /// </list>
+    /// </remarks>
     [AddComponentMenu("UdonSharp Toybox/Global/Global Slider")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public sealed class GlobalSlider : SyncBehaviour

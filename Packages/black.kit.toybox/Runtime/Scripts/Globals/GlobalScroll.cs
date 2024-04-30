@@ -9,6 +9,44 @@ namespace black.kit.toybox
     /// The component synchronizes the scroll position of the ScrollRect
     /// uGUI component.
     /// </summary>
+    /// <remarks>
+    /// Usage (in the inspector of Unity Editor):
+    /// <list type="number">
+    /// <item>
+    /// <description>
+    /// Add this component on the same object as the ScrollRect component.
+    /// If the component is not found on the same object, you should
+    /// specify the ScrollRect component in the <c>ScrollRect</c> field.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Set the following to <c>OnValueChanged (Vector2)</c> of the tied
+    /// ScrollRect component.
+    /// </description>
+    /// </item>
+    /// </list>
+    /// <list type="table">
+    /// <item>
+    /// <term>Emission</term>
+    /// <description>Runtime Only</description>
+    /// </item>
+    /// <item>
+    /// <term>Reference</term>
+    /// <description>Specify this component in hierarchy</description>
+    /// </item>
+    /// <item>
+    /// <term>Function</term>
+    /// <description>
+    /// <c>UdonBehaviour.SendCustomEvent (string)</c>
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <term>Argument</term>
+    /// <description><c>OnScroll</c></description>
+    /// </item>
+    /// </list>
+    /// </remarks>
     [AddComponentMenu("UdonSharp Toybox/Global/Global Scroll")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public sealed class GlobalScroll : SyncBehaviour
