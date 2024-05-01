@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -60,12 +61,14 @@ namespace black.kit.toybox.Editor
             }
         }
 
-        /// <summary>
-        /// Draw the Udon event of the inspector.
-        /// </summary>
+        /// <summary>Draw the Udon event of the inspector.</summary>
         /// <param name="argument">The argument of the Udon event.</param>
         /// <param name="style">The style of the list.</param>
-        public static void DrawUdonEvent(string argument, GUIStyle style)
+        /// <param name="tr">The translation function.</param>
+        public static void DrawUdonEvent(
+            string argument,
+            GUIStyle style,
+            Func<string, string> tr = null)
         {
             var list = new[]
             {
@@ -75,7 +78,7 @@ namespace black.kit.toybox.Editor
                 argument,
             };
             EditorGUI.indentLevel++;
-            DrawList(list, style, new() { Selectable = true });
+            DrawList(list, style, new() { Selectable = true, Tr = tr });
             EditorGUI.indentLevel--;
         }
     }

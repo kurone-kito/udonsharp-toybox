@@ -12,6 +12,9 @@ namespace black.kit.toybox.Editor
     public abstract class EditorBase<Tb> : UnityEditor.Editor
         where Tb : UdonSharpBehaviour
     {
+        /// <summary>The translation function.</summary>
+        protected readonly Func<string, string> Tr;
+
         /// <summary>The information of the banner.</summary>
         private readonly BannerInit bannerInit;
 
@@ -19,20 +22,22 @@ namespace black.kit.toybox.Editor
         /// <param name="details">The details of the target.</param>
         /// <param name="bannerInit">The information of the banner.</param>
         public EditorBase(
-            string details, Lazy<BannerInit> bannerInit = null)
+            string details, Lazy<BannerInit> bannerInit = null, Func<string, string> tr = null)
             : this(
                 details: details,
-                bannerInit: bannerInit?.Value ?? BannerInit.Toybox)
+                bannerInit: bannerInit?.Value ?? BannerInit.Toybox,
+                tr: tr)
         {
         }
 
         /// <summary>Initialize the editor.</summary>
         /// <param name="details">The details of the target.</param>
         /// <param name="bannerInit">The information of the banner.</param>
-        public EditorBase(string details, BannerInit bannerInit) : base()
+        public EditorBase(string details, BannerInit bannerInit, Func<string, string> tr = null) : base()
         {
             this.details = details;
             this.bannerInit = bannerInit;
+            Tr = tr ?? L10n.Tr;
         }
 
         /// <summary>The default style of the inspector.</summary>
@@ -111,7 +116,7 @@ namespace black.kit.toybox.Editor
             EditorUtils.DrawList(
                 list: list,
                 style: defaultStyle.Value,
-                options: new() { Selectable = selectable });
+                options: new() { Selectable = selectable, Tr = Tr });
 
         /// <summary>Draw the description of the inspector.</summary>
         protected void DrawDetails() =>
