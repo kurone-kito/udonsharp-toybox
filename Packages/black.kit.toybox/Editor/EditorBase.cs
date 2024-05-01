@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UdonSharp;
 using UnityEditor;
 using UnityEngine;
@@ -106,7 +107,7 @@ namespace black.kit.toybox.Editor
         /// </summary>
         /// <param name="list">The list to draw.</param>
         /// <param name="selectable">The list is selectable.</param>
-        protected void DrawList(string[] list, bool selectable = false) =>
+        protected void DrawList(IEnumerable<string> list, bool selectable = false) =>
             EditorUtils.DrawList(
                 list: list,
                 style: defaultStyle.Value,
