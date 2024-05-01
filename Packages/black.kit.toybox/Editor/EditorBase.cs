@@ -107,16 +107,20 @@ namespace black.kit.toybox.Editor
             EditorUtils.DrawBanner(
                 banner: LoadTexture(), aspectRatio: bannerInit.AspectRatio);
 
-        /// <summary>
-        /// Draw the list of the inspector.
-        /// </summary>
+        /// <summary>Draw the list of the inspector.</summary>
         /// <param name="list">The list to draw.</param>
         /// <param name="selectable">The list is selectable.</param>
         protected void DrawList(IEnumerable<string> list, bool selectable = false) =>
+            DrawList(list, new ListOptions() { Selectable = selectable, Tr = Tr });
+
+        /// <summary>Draw the list of the inspector.</summary>
+        /// <param name="list">The list to draw.</param>
+        /// <param name="options">The options of the list.</param>
+        protected void DrawList(IEnumerable<string> list, ListOptions options) =>
             EditorUtils.DrawList(
                 list: list,
                 style: defaultStyle.Value,
-                options: new() { Selectable = selectable, Tr = Tr });
+                options: options);
 
         /// <summary>Draw the description of the inspector.</summary>
         protected void DrawDetails() =>
@@ -128,6 +132,12 @@ namespace black.kit.toybox.Editor
         /// <returns>The texture of the banner.</returns>
         private Texture LoadTexture(bool Force = false) =>
             banner = (Force || !banner) ? bannerInit.LoadTexture() : banner;
+
+        /// <summary>Draw the Udon event of the inspector.</summary>
+        /// <param name="argument">The argument of the Udon event.</param>
+        protected void DrawUdonEvent(string argument) =>
+            EditorUtils.DrawUdonEvent(
+                argument: argument, style: defaultStyle.Value, tr: Tr);
 
 #pragma warning disable IDE0051
         /// <summary>The callback when the object is enabled.</summary>
