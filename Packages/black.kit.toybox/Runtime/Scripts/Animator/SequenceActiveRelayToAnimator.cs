@@ -45,7 +45,7 @@ namespace black.kit.toybox
     /// </remarks>
     /// <see cref="ActiveRelayToAnimatorEventType"/>
     /// <seealso cref="ConditionalActiveRelayToAnimator"/>
-    [AddComponentMenu("UdonSharp Toybox/Object/Sequence Active Relay To Animator")]
+    [AddComponentMenu("UdonSharp Toybox/Animation/Sequence Active Relay To Animator")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public sealed class SequenceActiveRelayToAnimator : ActiveRelayToAnimationBase
     {
