@@ -38,6 +38,9 @@ msgstr "<b>Notify()</b>メソッドを実行すると、登録されたObserver�
 msgid "DETAIL_TICKING_DOWN"
 msgstr "このコンポーネントはテキストコンポーネントへ、日時情報を低負荷で渡せます。"
 
+msgid "DETAIL_TOGGLE_WITH_ANIMATOR"
+msgstr "このコンポーネントは、Toggleコンポーネントと連携して、オン・オフの切り替え時にアニメーションを実行します。"
+
 msgid "DETAIL_WHITELIST"
 msgstr "このコンポーネントに指定したユーザーのみ、登録しているオブジェクトやコライダーの有効・無効状態を反転します。"
 
@@ -70,6 +73,12 @@ msgstr "1.ToggleGroupコンポーネントと同一のオブジェクトに配�
 
 msgid "USAGE_GLOBAL_TOGGLES_1"
 msgstr "2.ToggleGroupコンポーネントに紐づいた、各Toggleコンポーネントにおける<b>値の変更時(Boolean)</b>へ、以下を設定してください。"
+
+msgid "USAGE_LINK_ANIMATOR"
+msgstr "Animatorコンポーネントと同一のオブジェクトに配置するか、手動でコンポーネントを紐づけてください。"
+
+msgid "USAGE_LINK_TOGGLE"
+msgstr "Toggleコンポーネントと同一のオブジェクトに配置するか、手動でコンポーネントを紐づけてください。"
 
 msgid "USAGE_ON_SCROLL"
 msgstr "引数: <b>OnScroll</b>"
