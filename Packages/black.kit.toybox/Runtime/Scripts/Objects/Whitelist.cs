@@ -13,6 +13,26 @@ namespace black.kit.toybox
     /// toggles between enabled and disabled states.
     /// </para>
     /// </summary>
+    /// <remarks>
+    /// Usage (in the inspector of Unity Editor):
+    /// <list type="number">
+    /// <item>
+    /// <description>
+    /// Add this component or prefab to the scene.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the display names of the allowlist.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the colliders or/and game objects to flip the enabled state.
+    /// </description>
+    /// </item>
+    /// </list>
+    /// </remarks>
     [AddComponentMenu("UdonSharp Toybox/Object/Whitelist")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public sealed class Whitelist : UdonSharpBehaviour

@@ -6,6 +6,23 @@ namespace black.kit.toybox
     /// <summary>
     /// The class of the subject side in the publish-subscribe model.
     /// </summary>
+    /// <remarks>
+    /// Usage (in the inspector of Unity Editor):
+    /// <list type="number">
+    /// <item>
+    /// <description>
+    /// Add this component or prefab to the scene.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the observers to notify.
+    /// </description>
+    /// </item>
+    /// </list>
+    /// </remarks>
+    /// <seealso cref="Observer"/>
+    /// <seealso cref="ObserverHub"/>
     [AddComponentMenu("UdonSharp Toybox/Observer/Subject")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class Subject : UdonSharpBehaviour

@@ -16,6 +16,8 @@ namespace black.kit.toybox.Editor
             nameof(DETAIL_SEQUENCE_ACTIVE_RELAY_TO_ANIMATOR);
         public const string DETAIL_SUBJECT = nameof(DETAIL_SUBJECT);
         public const string DETAIL_TICKING_DOWN = nameof(DETAIL_TICKING_DOWN);
+        public const string DETAIL_TOGGLE_WITH_ANIMATOR =
+            nameof(DETAIL_TOGGLE_WITH_ANIMATOR);
         public const string DETAIL_WHITELIST = nameof(DETAIL_WHITELIST);
         public const string USAGE_COMPONENT = nameof(USAGE_COMPONENT);
         public const string USAGE_DOORBELL = nameof(USAGE_DOORBELL);
@@ -27,6 +29,8 @@ namespace black.kit.toybox.Editor
         public const string USAGE_GLOBAL_TOGGLE_1 = nameof(USAGE_GLOBAL_TOGGLE_1);
         public const string USAGE_GLOBAL_TOGGLES_0 = nameof(USAGE_GLOBAL_TOGGLES_0);
         public const string USAGE_GLOBAL_TOGGLES_1 = nameof(USAGE_GLOBAL_TOGGLES_1);
+        public const string USAGE_LINK_ANIMATOR = nameof(USAGE_LINK_ANIMATOR);
+        public const string USAGE_LINK_TOGGLE = nameof(USAGE_LINK_TOGGLE);
         public const string USAGE_ON_SCROLL = nameof(USAGE_ON_SCROLL);
         public const string USAGE_ON_TOGGLE = nameof(USAGE_ON_TOGGLE);
         public const string USAGE_ON_VALUE_CHANGED = nameof(USAGE_ON_VALUE_CHANGED);

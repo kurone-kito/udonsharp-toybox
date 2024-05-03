@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UdonSharp;
 using UnityEditor;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace black.kit.toybox.Editor
         /// <summary>Initialize the editor.</summary>
         public GlobalUIEditorBase(
             string details,
-            string[] usage,
+            IEnumerable<string> usage,
             string argument) : base(details)
         {
             this.usage = usage;
@@ -26,10 +27,10 @@ namespace black.kit.toybox.Editor
         }
 
         /// <summary>The usage of the target.</summary>
-        private readonly string[] usage;
+        private readonly IEnumerable<string> usage;
 
         /// <summary>The events usage of the target.</summary>
-        private readonly string[] events;
+        private readonly IEnumerable<string> events;
 
         /// <summary>Draw the usage of the component.</summary>
         protected void DrawUsage()

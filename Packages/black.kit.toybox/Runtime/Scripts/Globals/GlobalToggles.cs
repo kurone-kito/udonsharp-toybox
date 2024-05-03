@@ -9,6 +9,44 @@ namespace black.kit.toybox
     /// The component synchronizes the selection state of the Toggles UI
     /// component.
     /// </summary>
+    /// <remarks>
+    /// Usage (in the inspector of Unity Editor):
+    /// <list type="number">
+    /// <item>
+    /// <description>
+    /// Add this component on the same object as the ToggleGroup component.
+    /// If the component is not found on the same object, you should
+    /// specify the ToggleGroup component in the <c>ToggleGroup</c> field.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Set the following to <c>OnValueChanged (Boolean)</c> in each Toggle
+    /// component associated with the ToggleGroup component.
+    /// </description>
+    /// </item>
+    /// </list>
+    /// <list type="table">
+    /// <item>
+    /// <term>Emission</term>
+    /// <description>Runtime Only</description>
+    /// </item>
+    /// <item>
+    /// <term>Reference</term>
+    /// <description>Specify this component in hierarchy</description>
+    /// </item>
+    /// <item>
+    /// <term>Function</term>
+    /// <description>
+    /// <c>UdonBehaviour.SendCustomEvent (string)</c>
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <term>Argument</term>
+    /// <description><c>OnValueChanged</c></description>
+    /// </item>
+    /// </list>
+    /// </remarks>
     [AddComponentMenu("UdonSharp Toybox/Global/Global Toggles")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public sealed class GlobalToggles : SyncBehaviour

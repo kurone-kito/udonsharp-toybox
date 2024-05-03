@@ -8,6 +8,26 @@ namespace black.kit.toybox
     /// inactive and switches coordinate information the moment the active
     /// state changes.
     /// </summary>
+    /// <remarks>
+    /// Usage (in the inspector of Unity Editor):
+    /// <list type="number">
+    /// <item>
+    /// <description>
+    /// Add this component or prefab to the scene.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the target transform to update the coordinate information.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the coordinate information when active and inactive.
+    /// </description>
+    /// </item>
+    /// </list>
+    /// </remarks>
     [AddComponentMenu("UdonSharp Toybox/Object/Position Anchor")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public sealed class PositionAnchor : UdonSharpBehaviour

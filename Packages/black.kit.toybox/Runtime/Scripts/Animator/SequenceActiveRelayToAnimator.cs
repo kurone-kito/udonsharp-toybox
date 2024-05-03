@@ -18,7 +18,34 @@ namespace black.kit.toybox
     /// the specified object according to a predetermined sequence when
     /// the active state changes.
     /// </summary>
-    [AddComponentMenu("UdonSharp Toybox/Object/Sequence Active Relay To Animator")]
+    /// <remarks>
+    /// Usage (in the inspector of Unity Editor):
+    /// <list type="number">
+    /// <item>
+    /// <description>
+    /// Add this component or prefab to the scene.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the parameter names of the animator.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the sequences.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the event type to relay the active state.
+    /// </description>
+    /// </item>
+    /// </list>
+    /// </remarks>
+    /// <see cref="ActiveRelayToAnimatorEventType"/>
+    /// <seealso cref="ConditionalActiveRelayToAnimator"/>
+    [AddComponentMenu("UdonSharp Toybox/Animation/Sequence Active Relay To Animator")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public sealed class SequenceActiveRelayToAnimator : ActiveRelayToAnimationBase
     {

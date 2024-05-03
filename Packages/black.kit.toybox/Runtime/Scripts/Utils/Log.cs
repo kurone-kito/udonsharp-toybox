@@ -17,7 +17,19 @@ namespace black.kit.toybox
         /// <param name="message">The message</param>
         /// <param name="tag">specify the tag</param>
         /// <param name="color">specify the color</param>
-        /// <returns></returns>
+        /// <returns>The message with a tag and a color</returns>
+        /// <example>
+        /// <code>
+        /// Log.CreateMessage("Hello, World!");
+        /// <![CDATA[ // "[<color=red>toybox</color>] Hello, World!" ]]>
+        ///
+        /// Log.CreateMessage("Hello, World!", "MyTag");
+        /// <![CDATA[ // "[<color=red>MyTag</color>] Hello, World!" ]]>
+        ///
+        /// Log.CreateMessage("Hello, World!", "MyTag", "blue");
+        /// <![CDATA[ // "[<color=blue>MyTag</color>] Hello, World!" ]]>
+        /// </code>
+        /// </example>
         public static string CreateMessage(
             string message,
             string tag = DEFAULT_TAG,
@@ -30,6 +42,18 @@ namespace black.kit.toybox
         /// <param name="message">The message</param>
         /// <param name="tag">specify the tag</param>
         /// <param name="color">specify the color</param>
+        /// <example>
+        /// <code>
+        /// Log.Info("Hello, World!");
+        /// <![CDATA[ // ℹ️ Log: "[<color=red>toybox</color>] Hello, World!" ]]>
+        ///
+        /// Log.Info("Hello, World!", "MyTag");
+        /// <![CDATA[ // ℹ️ Log: "[<color=red>MyTag</color>] Hello, World!" ]]>
+        ///
+        /// Log.Info("Hello, World!", "MyTag", "blue");
+        /// <![CDATA[ // ℹ️ Log: "[<color=blue>MyTag</color>] Hello, World!" ]]>
+        /// </code>
+        /// </example>
         public static void Info(
             string message,
             string tag = DEFAULT_TAG,
@@ -42,6 +66,18 @@ namespace black.kit.toybox
         /// <param name="message">The message</param>
         /// <param name="tag">specify the tag</param>
         /// <param name="color">specify the color</param>
+        /// <example>
+        /// <code>
+        /// Log.Warn("Hello, World!");
+        /// <![CDATA[ // ⚠️ Log: "[<color=red>toybox</color>] Hello, World!" ]]>
+        ///
+        /// Log.Warn("Hello, World!", "MyTag");
+        /// <![CDATA[ // ⚠️ Log: "[<color=red>MyTag</color>] Hello, World!" ]]>
+        ///
+        /// Log.Warn("Hello, World!", "MyTag", "blue");
+        /// <![CDATA[ // ⚠️ Log: "[<color=blue>MyTag</color>] Hello, World!" ]]>
+        /// </code>
+        /// </example>
         public static void Warn(
             string message,
             string tag = DEFAULT_TAG,
@@ -54,6 +90,18 @@ namespace black.kit.toybox
         /// <param name="message">The message</param>
         /// <param name="tag">specify the tag</param>
         /// <param name="color">specify the color</param>
+        /// <example>
+        /// <code>
+        /// Log.Error("Hello, World!");
+        /// <![CDATA[ // 🛑 Log: "[<color=red>toybox</color>] Hello, World!" ]]>
+        ///
+        /// Log.Error("Hello, World!", "MyTag");
+        /// <![CDATA[ // 🛑 Log: "[<color=red>MyTag</color>] Hello, World!" ]]>
+        ///
+        /// Log.Error("Hello, World!", "MyTag", "blue");
+        /// <![CDATA[ // 🛑 Log: "[<color=blue>MyTag</color>] Hello, World!" ]]>
+        /// </code>
+        /// </example>
         public static void Error(
             string message,
             string tag = DEFAULT_TAG,

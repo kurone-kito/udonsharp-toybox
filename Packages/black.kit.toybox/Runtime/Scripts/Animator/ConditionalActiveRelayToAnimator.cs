@@ -4,7 +4,35 @@ using UnityEngine;
 
 namespace black.kit.toybox
 {
-    [AddComponentMenu("UdonSharp Toybox/Object/Conditional Active Relay To Animator")]
+    /// <summary>
+    /// This component transfers parameters to the Animator component of
+    /// the specified object according to a predetermined sequence when the
+    /// active state changes. The significant difference from the
+    /// <see cref="SequenceActiveRelayToAnimator"/> is that different
+    /// states can be specified for each turn on and off.
+    /// </summary>
+    /// <remarks>
+    /// Usage (in the inspector of Unity Editor):
+    /// <list type="number">
+    /// <item>
+    /// <description>
+    /// Add this component or prefab to the scene.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the parameter names of the animator.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <description>
+    /// Specify the sequences.
+    /// </description>
+    /// </item>
+    /// </list>
+    /// </remarks>
+    /// <seealso cref="SequenceActiveRelayToAnimator"/>
+    [AddComponentMenu("UdonSharp Toybox/Animation/Conditional Active Relay To Animator")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public sealed class ConditionalActiveRelayToAnimator : ActiveRelayToAnimationBase
     {

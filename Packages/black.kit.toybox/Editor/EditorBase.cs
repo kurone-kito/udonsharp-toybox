@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UdonSharp;
 using UnityEditor;
 using UnityEngine;
@@ -11,6 +12,9 @@ namespace black.kit.toybox.Editor
     public abstract class EditorBase<Tb> : UnityEditor.Editor
         where Tb : UdonSharpBehaviour
     {
+        /// <summary>The translation function.</summary>
+        protected readonly Func<string, string> Tr;
+
         /// <summary>The information of the banner.</summary>
         private readonly BannerInit bannerInit;
 
@@ -18,20 +22,22 @@ namespace black.kit.toybox.Editor
         /// <param name="details">The details of the target.</param>
         /// <param name="bannerInit">The information of the banner.</param>
         public EditorBase(
-            string details, Lazy<BannerInit> bannerInit = null)
+            string details, Lazy<BannerInit> bannerInit = null, Func<string, string> tr = null)
             : this(
                 details: details,
-                bannerInit: bannerInit?.Value ?? BannerInit.Toybox)
+                bannerInit: bannerInit?.Value ?? BannerInit.Toybox,
+                tr: tr)
         {
         }
 
         /// <summary>Initialize the editor.</summary>
         /// <param name="details">The details of the target.</param>
         /// <param name="bannerInit">The information of the banner.</param>
-        public EditorBase(string details, BannerInit bannerInit) : base()
+        public EditorBase(string details, BannerInit bannerInit, Func<string, string> tr = null) : base()
         {
             this.details = details;
             this.bannerInit = bannerInit;
+            Tr = tr ?? L10n.Tr;
         }
 
         /// <summary>The default style of the inspector.</summary>
@@ -101,16 +107,20 @@ namespace black.kit.toybox.Editor
             EditorUtils.DrawBanner(
                 banner: LoadTexture(), aspectRatio: bannerInit.AspectRatio);
 
-        /// <summary>
-        /// Draw the list of the inspector.
-        /// </summary>
+        /// <summary>Draw the list of the inspector.</summary>
         /// <param name="list">The list to draw.</param>
         /// <param name="selectable">The list is selectable.</param>
-        protected void DrawList(string[] list, bool selectable = false) =>
+        protected void DrawList(IEnumerable<string> list, bool selectable = false) =>
+            DrawList(list, new ListOptions() { Selectable = selectable, Tr = Tr });
+
+        /// <summary>Draw the list of the inspector.</summary>
+        /// <param name="list">The list to draw.</param>
+        /// <param name="options">The options of the list.</param>
+        protected void DrawList(IEnumerable<string> list, ListOptions options) =>
             EditorUtils.DrawList(
                 list: list,
                 style: defaultStyle.Value,
-                options: new() { Selectable = selectable });
+                options: options);
 
         /// <summary>Draw the description of the inspector.</summary>
         protected void DrawDetails() =>
@@ -122,6 +132,12 @@ namespace black.kit.toybox.Editor
         /// <returns>The texture of the banner.</returns>
         private Texture LoadTexture(bool Force = false) =>
             banner = (Force || !banner) ? bannerInit.LoadTexture() : banner;
+
+        /// <summary>Draw the Udon event of the inspector.</summary>
+        /// <param name="argument">The argument of the Udon event.</param>
+        protected void DrawUdonEvent(string argument) =>
+            EditorUtils.DrawUdonEvent(
+                argument: argument, style: defaultStyle.Value, tr: Tr);
 
 #pragma warning disable IDE0051
         /// <summary>The callback when the object is enabled.</summary>
