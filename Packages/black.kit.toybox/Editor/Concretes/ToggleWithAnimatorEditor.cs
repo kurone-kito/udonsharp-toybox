@@ -47,7 +47,7 @@ namespace black.kit.toybox.Editor
             if (animator)
             {
                 animator.SetBool(
-                    param.stringValue, !!toggle && toggle.isOn);
+                    param.stringValue, toggle && toggle.isOn);
                 animator.Update(Time.deltaTime * 100f);
             }
             serializedObject.ApplyModifiedProperties();
