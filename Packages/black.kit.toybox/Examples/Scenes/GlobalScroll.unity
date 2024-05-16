@@ -4785,7 +4785,7 @@ PrefabInstance:
     - target: {fileID: 7496660487265934202, guid: 2947e17e95b036b49b40bc16c5d41cc6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 557
+      value: 557.00586
       objectReference: {fileID: 0}
     - target: {fileID: 8314906759889945362, guid: 2947e17e95b036b49b40bc16c5d41cc6,
         type: 3}
@@ -5121,6 +5121,7 @@ MonoBehaviour:
   m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllowFocusView: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
