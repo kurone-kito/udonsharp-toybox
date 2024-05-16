@@ -33,7 +33,7 @@ namespace black.kit.toybox.Editor
                 GlobalToggles.NAME_TOGGLE_GROUP);
             var arrayProp = serializedObject.FindProperty(
                 GlobalToggles.NAME_TOGGLES);
-            CompleteToggles(toggleGroup, arrayProp);
+            toggleGroup.CompleteToggles(arrayProp);
             serializedObject.ApplyModifiedProperties();
         }
     }
