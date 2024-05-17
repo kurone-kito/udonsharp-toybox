@@ -1,9 +1,12 @@
 {
   "name": "black.kit.toybox",
-  "displayName": "black.kit.toybox",
+  "displayName": "UdonSharp Toybox",
   "version": "0.6.0",
   "unity": "2022.3",
   "description": "UdonSharp Toybox by Kuroné Kito",
+  "keywords": [
+    "utils"
+  ],
   "author": {
     "name": "Kuroné Kito",
     "email": "krone@kit.black",
