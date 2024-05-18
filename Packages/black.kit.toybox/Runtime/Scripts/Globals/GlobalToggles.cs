@@ -96,7 +96,7 @@ namespace black.kit.toybox
             {
                 return;
             }
-            SetValue((sbyte)GetComponentIndex());
+            SetValue((sbyte)GetSelectedIndex());
         }
 
         public void SetValue(sbyte index)
@@ -123,7 +123,7 @@ namespace black.kit.toybox
             }
             if (IsOwner())
             {
-                index = (sbyte)GetComponentIndex();
+                index = (sbyte)GetSelectedIndex();
             }
         }
 
@@ -149,14 +149,12 @@ namespace black.kit.toybox
             }
         }
 
-        /// <summary>
-        /// Get the index of the selected toggle.
-        /// </summary>
+        /// <summary>Get the index of the selected toggle.</summary>
         /// <returns>
         /// The index of the selected toggle.
         /// When no toggle is selected, returns -1.
         /// </returns>
-        private int GetComponentIndex()
+        private int GetSelectedIndex()
         {
             for (int i = toggles.Length; --i >= 0;)
             {

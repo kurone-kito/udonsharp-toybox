@@ -1,9 +1,13 @@
 {
   "name": "black.kit.toybox",
-  "displayName": "black.kit.toybox",
-  "version": "0.6.0",
+  "displayName": "UdonSharp Toybox",
+  "version": "0.7.0",
   "unity": "2022.3",
+  "unityRelease": "22f1",
   "description": "UdonSharp Toybox by Kuroné Kito",
+  "keywords": [
+    "utils"
+  ],
   "author": {
     "name": "Kuroné Kito",
     "email": "krone@kit.black",
@@ -12,6 +16,6 @@
   "dependencies": {},
   "gitDependencies": {},
   "vpmDependencies": {
-    "com.vrchat.worlds": "^3.5.2"
+    "com.vrchat.worlds": "^3.6.0"
   }
 }

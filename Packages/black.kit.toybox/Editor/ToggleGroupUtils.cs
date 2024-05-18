@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using UnityEditor;
 using UnityEngine.UI;
 
 namespace black.kit.toybox.Editor
@@ -32,6 +33,32 @@ namespace black.kit.toybox.Editor
         {
             var flags = BindingFlags.Instance | BindingFlags.NonPublic;
             toggles = typeof(ToggleGroup).GetField(TG.NAME, flags);
+        }
+
+        /// <summary>Complete the toggles of the specified array.</summary>
+        /// <param name="group">The toggle group.</param>
+        /// <param name="arrayProp">
+        /// The serialized property of the array.
+        /// </param>
+        /// <returns>The toggles of the array.</returns>
+        public static Toggle[] CompleteToggles(
+            this ToggleGroup group, SerializedProperty arrayProp)
+        {
+            var array = group.GetToggles();
+            if (!(arrayProp?.isArray ?? false) || array == null) {
+                return array;
+            }
+            var length = array.Length;
+            if (arrayProp.arraySize != length)
+            {
+                arrayProp.arraySize = length;
+            }
+            for (var i = length; --i >= 0;)
+            {
+                arrayProp.GetArrayElementAtIndex(i).objectReferenceValue =
+                    array[i];
+            }
+            return array;
         }
 
         /// <summary>
