@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UdonSharp;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace black.kit.toybox.Editor
 {
@@ -74,32 +73,6 @@ namespace black.kit.toybox.Editor
             var component = TypedTarget.GetComponent<T>();
             prop.objectReferenceValue = component;
             return component;
-        }
-
-        /// <summary>Complete the toggles of the specified array.</summary>
-        /// <param name="toggleGroup">The toggle group.</param>
-        /// <param name="arrayProp">
-        /// The serialized property of the array.
-        /// </param>
-        /// <returns>The toggles of the array.</returns>
-        protected Toggle[] CompleteToggles(
-            ToggleGroup toggleGroup, SerializedProperty arrayProp)
-        {
-            var array = toggleGroup.GetToggles();
-            if (arrayProp != null && arrayProp.isArray && array != null)
-            {
-                var length = array.Length;
-                if (arrayProp.arraySize != length)
-                {
-                    arrayProp.arraySize = length;
-                }
-                for (var i = length; --i >= 0;)
-                {
-                    arrayProp.GetArrayElementAtIndex(i).objectReferenceValue =
-                        array[i];
-                }
-            }
-            return array;
         }
 
         /// <summary>Draw the banner of the inspector.</summary>

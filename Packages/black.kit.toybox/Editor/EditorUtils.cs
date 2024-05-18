@@ -9,6 +9,14 @@ namespace black.kit.toybox.Editor
     /// <summary>The utility class for the editor.</summary>
     public static class EditorUtils
     {
+        /// <summary>The list of the event usage.</summary>
+        private static readonly string[] eventUsage = new[]
+        {
+            T.USAGE_RUNTIME_ONLY,
+            T.USAGE_THIS_COMPONENT,
+            T.USAGE_SEND_CUSTOM_EVENT,
+        };
+
         /// <summary>Draw the banner to the inspector.</summary>
         /// <param name="banner">The texture of the banner.</param>
         public static void DrawBanner(Texture banner, float aspectRatio)
@@ -70,14 +78,8 @@ namespace black.kit.toybox.Editor
             GUIStyle style,
             Func<string, string> tr = null)
         {
-            var list = new[]
-            {
-                T.USAGE_RUNTIME_ONLY,
-                T.USAGE_THIS_COMPONENT,
-                T.USAGE_SEND_CUSTOM_EVENT,
-                argument,
-            };
             EditorGUI.indentLevel++;
+            var list = eventUsage.Append(argument);
             DrawList(list, style, new() { Selectable = true, Tr = tr });
             EditorGUI.indentLevel--;
         }
