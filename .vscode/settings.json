@@ -6,6 +6,7 @@
     "*.dll": "${capture}.pdb",
     "*.md": "${capture}.*.md",
     "*.sln": "*.csproj",
+    ".markdownlint.*": ".markdownlint-cli2.*",
     ".gitconfig": ".gitattributes, .gitignore",
     ".tool-versions": "global.json",
     "T.cs": "*.po"
