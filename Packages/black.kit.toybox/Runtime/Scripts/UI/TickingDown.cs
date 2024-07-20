@@ -38,7 +38,7 @@ namespace black.kit.toybox
     /// </remarks>
     [AddComponentMenu("UdonSharp Toybox/UI/Ticking Down")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public sealed class TickingDown : UdonSharpBehaviour
+    public sealed class TickingDown : IntervalBase
     {
         /// <summary>The property name of the format.</summary>
         public const string NAME_TEXT = nameof(text);
@@ -46,22 +46,11 @@ namespace black.kit.toybox
         /// <summary>The property name of the format.</summary>
         public const string NAME_TEXT_MESH = nameof(textMesh);
 
-        /// <summary>
-        /// The warning message when the Text component is not found.
-        /// </summary>
-        private const string WARN_NO_TEXT = "Text component is not found.";
-
 #pragma warning disable IDE0044
         /// <summary>The format to display the date and time.</summary>
         [SerializeField]
         [Tooltip("Specify the format to display the date and time.")]
         private string format = "yyyy-MM-ddTHH:mm:ss";
-
-        /// <summary>The interval to update the date and time.</summary>
-        /// <remarks>It ignores less than 0.01f.</remarks>
-        [SerializeField, Range(0.01f, 60f)]
-        [Tooltip("Specify the interval to update the date and time by seconds. It ignores less than 0.01f.")]
-        private float interval = 1f;
 
         /// <summary>
         /// The text component to display the date and time.
@@ -78,18 +67,9 @@ namespace black.kit.toybox
         private TextMeshProUGUI textMesh;
 #pragma warning restore IDE0044
 
-        /// <summary>The callback to update the date and time.</summary>
-        /// <remarks>
-        /// This method is automatically called from within.
-        /// <em>DO NOT CALL IT DIRECTLY</em>; it'll duplicate the calling
-        /// cycle and can result in overloading.
-        /// </remarks>
-        public void Tick()
+        /// <summary>Update the view of the UI.</summary>
+        public override void UpdateView()
         {
-            if (DetectNull())
-            {
-                return;
-            }
             var now = DateTime.Now.ToString(format);
             if (text)
             {
@@ -99,30 +79,10 @@ namespace black.kit.toybox
             {
                 textMesh.text = now;
             }
-            var safeInterval = Mathf.Max(interval, 0.01f);
-            SendCustomEventDelayedSeconds(nameof(Tick), safeInterval);
         }
 
-        /// <summary>
-        /// Determine whether the Text or TextMeshProUGUI component is null.
-        /// </summary>
-        /// <returns>
-        /// <c>true</c> if the Text or TextMeshProUGUI component is null;
-        /// otherwise, <c>false</c>.
-        /// </returns>
-        private bool DetectNull()
-        {
-            var result = !(text || textMesh);
-            if (result)
-            {
-                Log.Warn(WARN_NO_TEXT);
-            }
-            return result;
-        }
-
-#pragma warning disable IDE0051
-        /// <summary>The callback when the object is enabled.</summary>
-        void Start() => Tick();
-#pragma warning restore IDE0051
+        /// <summary>Validate the inspector.</summary>
+        /// <returns>Whether the inspectors are valid.</returns>
+        protected override bool ValidateInspector() => text || textMesh;
     }
 }
