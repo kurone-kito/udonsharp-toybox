@@ -61,19 +61,19 @@ jobs:
           echo "stableVersion=${{ steps.stable-match.outputs.match }}" >> $GITHUB_ENV
           echo "unityPackage=${{ vars.PACKAGE_NAME }}-${{ steps.version.outputs.value }}.unitypackage" >> $GITHUB_ENV
           echo "version=${{ steps.version.outputs.value }}" >> $GITHUB_ENV
-          echo "zipFile=${{ vars.PACKAGE_NAME }}-${{ steps.version.outputs.value }}".zip >> $GITHUB_ENV
+          echo "zipFile=${{ vars.PACKAGE_NAME }}-${{ steps.version.outputs.value }}.zip" >> $GITHUB_ENV
       - name: Zip the Package for release
-        working-directory: "${{ env.packagePath }}"
         run: zip -r -9 "${{ github.workspace }}/${{ env.zipFile }}" .
+        working-directory: "${{ env.packagePath }}"
       - name: Build a list of .meta files for future use
-        run: find "${{ env.packagePath }}/" -name \*.meta >> metaList
+        run: find "${{ env.packagePath }}/" -name '*.meta' -type f >> metaList
       - name: Make a UnityPackage version of the Package for release
         uses: pCYSl5EDgo/create-unitypackage@v1
         with:
           package-path: ${{ env.unityPackage }}
           include-files: metaList
       - name: Zip the UnityPackage for release
-        run: zip -r -9 "${{ env.unityPackage }}.zip" ${{ env.unityPackage }} LICENSE README.md
+        run: zip -r -9 "${{ env.unityPackage }}.zip" "${{ env.unityPackage }}" LICENSE README.md
       - name: Sign the artifacts
         run: |
           echo "${GPG_PASSPHRASE}" | gpg --batch -ab "${{ env.zipFile }}"
