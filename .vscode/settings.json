@@ -22,7 +22,7 @@
     "*.buildreport": "yaml",
     "*.controller": "yaml",
     "*.dwlt": "yaml",
-    "*.exe.congig": "xml",
+    "*.exe.config": "xml",
     "*.index": "json",
     "*.info": "json",
     "*.inputactions": "json",
@@ -56,6 +56,8 @@
     "XRSettings.asset": "json"
   },
   "files.readonlyInclude": {
+    "Assets/UdonSharp/": true,
+    "Assets/XR/": true,
     "Packages/com.*/**": true,
     "Packages/dev.*/**": true,
     "Packages/*.json": true,
@@ -63,6 +65,8 @@
   },
   "files.watcherExclude": {
     "**/*.suo": true,
+    "Assets/UdonSharp/": true,
+    "Assets/XR/": true,
     "Build/": true,
     "Library/**": true,
     "Logs/**": true,
@@ -73,6 +77,8 @@
   "git.branchProtection": ["main"],
   "search.exclude": {
     "**/*.suo": true,
+    "Assets/UdonSharp/": true,
+    "Assets/XR/": true,
     "Build/": true,
     "Library/**": true,
     "Logs/**": true,
