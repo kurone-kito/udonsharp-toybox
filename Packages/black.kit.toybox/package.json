@@ -20,6 +20,6 @@
   "dependencies": {},
   "gitDependencies": {},
   "vpmDependencies": {
-    "com.vrchat.worlds": "^3.7.3"
+    "com.vrchat.worlds": "^3.7.4"
   }
 }
