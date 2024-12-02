@@ -9,6 +9,7 @@ reviews:
     - '!Assets/TextMesh Pro/**/*'
     - '!Assets/UdonSharp/**/*'
     - '!Assets/XR/**/*'
+    - '!Documentation/**/*'
     - '!Packages/com.vrchat.core.*/**/*'
     - '!ProjectSettings/**/*'
   path_instructions:

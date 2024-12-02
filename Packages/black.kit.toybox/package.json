@@ -1,7 +1,7 @@
 {
   "name": "black.kit.toybox",
   "displayName": "UdonSharp Toybox",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "unity": "2022.3",
   "unityRelease": "22f1",
   "description": "Utility prefabs and scripts for UdonSharp; e.g. UI parts with global sync, Object teleporter by turning the object on or off, and other features.",
@@ -20,6 +20,6 @@
   "dependencies": {},
   "gitDependencies": {},
   "vpmDependencies": {
-    "com.vrchat.worlds": "^3.7.3"
+    "com.vrchat.worlds": "^3.7.4"
   }
 }
