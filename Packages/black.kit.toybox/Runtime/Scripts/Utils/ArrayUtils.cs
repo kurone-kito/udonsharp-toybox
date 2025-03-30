@@ -134,6 +134,101 @@ namespace black.kit.toybox
         }
 
         /// <summary>
+        /// Fill the array with the specified value.
+        /// </summary>
+        /// <typeparam name="T">Type of array elements</typeparam>
+        /// <param name="array">The array to fill</param>
+        /// <param name="value">The value to fill the array with</param>
+        /// <example>
+        /// <code>
+        /// <![CDATA[
+        /// int[] array = { 1, 2, 3 };
+        /// array.Fill(0); // { 0, 0, 0 }
+        /// array.Fill(1); // { 1, 1, 1 }
+        /// array.Fill(2); // { 2, 2, 2 }
+        /// array.Fill(3); // { 3, 3, 3 }
+        /// array.Fill(4); // { 4, 4, 4 }
+        /// ]]>
+        /// </code>
+        /// </example>
+        public static void Fill<T>(this T[] array, T value)
+        {
+            for (var i = array.Length; --i >= 0;)
+            {
+                array[i] = value;
+            }
+        }
+
+        /// <summary>
+        /// Determines whether the specified array is filled with the
+        /// same value.
+        /// </summary>
+        /// <typeparam name="T">Type of array elements</typeparam>
+        /// <param name="array">The array to check</param>
+        /// <returns>
+        /// True if the array is filled with the same value,
+        /// otherwise false.
+        /// </returns>
+        /// <example>
+        /// <code>
+        /// <![CDATA[
+        /// int[] arrayA = { 1, 1, 1 };
+        /// int[] arrayB = { 1, 2, 2 };
+        /// int[] arrayC = { 2, 2, 2 };
+        /// int[] arrayD = new int[0];
+        /// arrayA.IsFill(); // true
+        /// arrayB.IsFill(); // false
+        /// arrayC.IsFill(); // true
+        /// arrayD.IsFill(); // false
+        /// ]]>
+        /// </code>
+        /// </example>
+        public static bool IsFill<T>(this T[] array) where T : IEquatable<T> =>
+            array != null && array.Length > 0 && array.IsFill(array[0]);
+
+        /// <summary>
+        /// Determines whether the specified array is filled with the
+        /// specified value.
+        /// </summary>
+        /// <typeparam name="T">Type of array elements</typeparam>
+        /// <param name="array">The array to check</param>
+        /// <param name="value">The value to compare against</param>
+        /// <returns>
+        /// True if the array is filled with the specified value,
+        /// otherwise false.
+        /// </returns>
+        /// <example>
+        /// <code>
+        /// <![CDATA[
+        /// int[] arrayA = { 1, 1, 1 };
+        /// int[] arrayB = { 1, 2, 2 };
+        /// int[] arrayC = { 2, 2, 2 };
+        /// arrayA.IsFill(1); // true
+        /// arrayA.IsFill(2); // false
+        /// arrayB.IsFill(1); // false
+        /// arrayB.IsFill(2); // false
+        /// arrayC.IsFill(1); // false
+        /// arrayC.IsFill(2); // true
+        /// ]]>
+        /// </code>
+        /// </example>
+        public static bool IsFill<T>(this T[] array, T value) where T : IEquatable<T>
+        {
+            if (array == null || array.Length == 0)
+            {
+                return false;
+            }
+            foreach (var obj in array)
+            {
+                if (!obj.Equals(value))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        /// <summary>
         /// Batch setting of game object activation status.
         /// </summary>
         /// <param name="array">
