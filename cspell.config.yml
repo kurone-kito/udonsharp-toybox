@@ -4,9 +4,12 @@ dictionaries:
   - csharp
   - dotnet
   - en-gb
+  - en_shared
   - en-us
   - fsharp
+  - gaming-terms
   - lorem-ipsum
+  - python
 enableGlobDot: true
 features:
   weighted-suggestions: true
@@ -29,20 +32,17 @@ language: en,ja
 useGitignore: true
 version: "0.2"
 words:
-  - aniso
   - atrous
   - denoiser
   - dwlt
   - kito
   - kurone
   - kuroné
-  - mathf
   - msaa
   - nunit
   - occludee
   - scriban
   - spatialization
-  - udon
-  - ugui
+  - unityyamlmerge
   - vrchat
   - vrcsdk
