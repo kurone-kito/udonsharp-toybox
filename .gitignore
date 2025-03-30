@@ -219,6 +219,9 @@ Glyph Report.*
 [Aa]ssets/SerializedUdonPrograms*
 [Aa]ssets/UdonSharp/PrefabBuild*
 
+# VRChat ClientSim
+ClientSimStorage/*
+
 # VRWorld Toolkit
 [Aa]ssets/_LastBuild*
 
