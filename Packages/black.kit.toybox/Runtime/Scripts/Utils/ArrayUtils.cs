@@ -125,7 +125,14 @@ namespace black.kit.toybox
             }
             foreach (var obj in array)
             {
-                if (obj.Equals(value))
+                if (obj == null)
+                {
+                    if (value == null)
+                    {
+                        return true;
+                    }
+                }
+                else if (obj.Equals(value))
                 {
                     return true;
                 }
@@ -153,7 +160,11 @@ namespace black.kit.toybox
         /// </example>
         public static void Fill<T>(this T[] array, T value)
         {
-            for (var i = array.Length; --i >= 0;)
+            if (array == null)
+            {
+                return;
+            }
+            for (var i = array.Length; --i >= 0; )
             {
                 array[i] = value;
             }
@@ -220,7 +231,14 @@ namespace black.kit.toybox
             }
             foreach (var obj in array)
             {
-                if (!obj.Equals(value))
+                if (obj == null)
+                {
+                    if (value != null)
+                    {
+                        return false;
+                    }
+                }
+                else if (!obj.Equals(value))
                 {
                     return false;
                 }
