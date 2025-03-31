@@ -50,6 +50,36 @@ namespace black.kit.toybox.Tests
         public bool Contains(int[] array, int value) => array.Contains(value);
 
         /// <summary>
+        /// Test for the <see cref="ArrayUtils.Fill{T}(T[], T)"/> method.
+        /// </summary>
+        [Test]
+        public void Fill()
+        {
+            int[] array = { 1, 2, 3 };
+            Assert.DoesNotThrow(() => array.Fill(0));
+            Assert.IsTrue(array.All(obj => obj == 0));
+        }
+
+        /// <summary>
+        /// Test for the <see cref="ArrayUtils.IsFill{T}(T[])"/> method.
+        /// </summary>
+        [TestCase(new[] { 0, 0, 0 }, ExpectedResult = true)]
+        [TestCase(new[] { 0, 0, 1 }, ExpectedResult = false)]
+        [TestCase(new[] { 1, 1, 1 }, ExpectedResult = true)]
+        [TestCase(new int[0], ExpectedResult = false)]
+        public bool IsFill(int[] array) => array.IsFill();
+
+        /// <summary>
+        /// Test for the <see cref="ArrayUtils.IsFill{T}(T[], T)"/> method.
+        /// </summary>
+        [TestCase(new[] { 0, 0, 0 }, 0, ExpectedResult = true)]
+        [TestCase(new[] { 0, 0, 1 }, 0, ExpectedResult = false)]
+        [TestCase(new[] { 0, 0, 1 }, 1, ExpectedResult = false)]
+        [TestCase(new[] { 1, 1, 1 }, 1, ExpectedResult = true)]
+        [TestCase(new int[0], 0, ExpectedResult = false)]
+        [TestCase(new int[0], 1, ExpectedResult = false)]
+        public bool IsFill(int[] array, int value) => array.IsFill(value);
+
         /// Test for the <see cref="ArrayUtils.SetActive(GameObject[], bool)"/>
         /// method.
         /// </summary>
