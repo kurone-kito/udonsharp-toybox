@@ -21,7 +21,7 @@ My utilities library for the UdonSharp / VRChat
 - 📱 **Architecture free! (Windows, Android / Quest, iOS)**
 - 🖱 UI parts with global sync
 - 🫥 Object teleporter by turning the object on or off
-- 🔓 (Statically) whitelist gimmick
+- ⌛ Long-press interaction
 - 🛎 Notify sound playing gimmick on player joined
 - 🌈 Logger with vivid colors
 - ⚙️ Other features...
