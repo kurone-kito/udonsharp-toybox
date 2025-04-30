@@ -12,7 +12,7 @@ namespace black.kit.toybox
     public class LongPressTrigger : UdonSharpBehaviour
     {
 #pragma warning disable IDE0044
-        /// <summary>The threashold time to trigger the event.</summary>
+        /// <summary>The threshold time to trigger the event.</summary>
         [SerializeField, Range(0.1f, 10f)]
         [Tooltip("The threshold time to trigger the event.")]
         private float threshold = 1f;
@@ -45,7 +45,7 @@ namespace black.kit.toybox
         /// <summary>Whether the button is currently pressed.</summary>
         public bool IsPressing => isPressing;
 
-        /// <summary>The threashold time to trigger the event.</summary>
+        /// <summary>The threshold time to trigger the event.</summary>
         public float Threshold => threshold;
 
         /// <summary>The time when the button was pressed down.</summary>

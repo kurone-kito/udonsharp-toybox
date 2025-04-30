@@ -6,7 +6,7 @@ namespace black.kit.toybox.Editor
     /// The inspector of the <see cref="LongPressTrigger"/>.
     /// </summary>
     [CustomEditor(typeof(LongPressTrigger))]
-    public sealed class LongPressTriggerEditor : EditorBase<ObserverHub>
+    public sealed class LongPressTriggerEditor : EditorBase<LongPressTrigger>
     {
         /// <summary>Initialize the editor.</summary>
         public LongPressTriggerEditor() : base(
