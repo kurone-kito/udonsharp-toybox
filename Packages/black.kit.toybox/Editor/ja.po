@@ -23,6 +23,9 @@ msgstr "このコンポーネントは、Toggleコンポーネントの選択状
 msgid "DETAIL_GLOBAL_TOGGLES"
 msgstr "このコンポーネントは、ToggleGroupコンポーネントに紐づく複数のToggleコンポーネントに対して、選択状態を同期します。"
 
+msgid "DETAIL_LONG_PRESS_TRIGGER"
+msgstr "このコンポーネントは、プレーヤーがオブジェクトに対して長押し操作を行った際に、指定したイベントを実行します。"
+
 msgid "DETAIL_OBSERVER_HUB"
 msgstr "このコンポーネントは、Subjectに多くのObserverを登録して、管理しづらい場合に活用します。無限にネストできますが、循環参照に注意してください。"
 

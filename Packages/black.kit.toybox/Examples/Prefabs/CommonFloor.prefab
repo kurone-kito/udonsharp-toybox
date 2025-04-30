@@ -263,6 +263,7 @@ MonoBehaviour:
     SerializedTypeNames: []
   portraitCameraPositionOffset: {x: 0, y: 0, z: 0}
   portraitCameraRotationOffset: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  PlayerPersistence: []
   NavigationAreas: []
 --- !u!114 &4690406297278745075
 MonoBehaviour:
