@@ -41,7 +41,7 @@ namespace black.kit.toybox
         /// </example>
         public static T At<T>(this T[] array, int index)
         {
-            if (array == null)
+            if (array == null || array.Length == 0)
             {
                 return default;
             }
@@ -83,7 +83,7 @@ namespace black.kit.toybox
         /// </example>
         public static int AtIndex<T>(this T[] array, int index)
         {
-            if (array == null)
+            if (array == null || array.Length == 0)
             {
                 return -1;
             }

@@ -21,6 +21,8 @@ namespace black.kit.toybox.Tests
         [TestCase(new[] { 1, 2, 3 }, -4, ExpectedResult = 3)]
         [TestCase(new[] { 1, 2, 3 }, -5, ExpectedResult = 2)]
         [TestCase(new[] { 1, 2, 3 }, -6, ExpectedResult = 1)]
+        [TestCase(new int[0], 0, ExpectedResult = 0)]
+        [TestCase(new int[0], -1, ExpectedResult = 0)]
         [TestCase(null, 0, ExpectedResult = 0)]
         public int At(int[] array, int index) => array.At(index);
 
@@ -37,6 +39,8 @@ namespace black.kit.toybox.Tests
         [TestCase(new[] { 1, 2, 3 }, -4, ExpectedResult = 2)]
         [TestCase(new[] { 1, 2, 3 }, -5, ExpectedResult = 1)]
         [TestCase(new[] { 1, 2, 3 }, -6, ExpectedResult = 0)]
+        [TestCase(new int[0], 0, ExpectedResult = -1)]
+        [TestCase(new int[0], -1, ExpectedResult = -1)]
         [TestCase(null, 0, ExpectedResult = -1)]
         public int AtIndex(int[] array, int index) => array.AtIndex(index);
 
