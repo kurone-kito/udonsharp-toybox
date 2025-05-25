@@ -24,6 +24,43 @@ My utilities library for the UdonSharp / VRChat
 - 🌈 Logger with vivid colors
 - ⚙️ Other features...
 
+## 🧩 Example Scenes and Prefabs
+
+Sample scenes showcasing each feature are available under
+`Packages/black.kit.toybox/Examples`.
+
+### Scenes
+
+- `ConditionalActiveRelayToAnimator.unity`:
+  relay animator parameters when objects toggle on or off.
+- `Doorbell.unity`: simple sound trigger example.
+- `GlobalScroll.unity`: synchronized scroll view.
+- `GlobalSlider.unity`: synchronized slider control.
+- `GlobalToggle.unity`: synchronized single toggle.
+- `GlobalToggles.unity`: synchronized multiple toggles.
+- `LongPressTrigger.unity`: long‑press button behaviour.
+- `PositionAnchor.unity`: move objects between preset positions.
+- `SequenceActiveRelayToAnimator.unity`:
+  step through animator parameters in sequence.
+- `TickingDown.unity`: display the current time repeatedly.
+- `ToggleWithAnimator.unity`:
+  link a UI toggle with an Animator component.
+- `TmpUrlSticky.unity`: URL opener using TextMeshPro.
+- `UrlSticky.unity`: open a URL when clicked.
+- `Whitelist.unity`: enable objects for whitelisted user names.
+
+`CommonFloor.prefab`: provides a simple floor used across these scenes.
+
+### Running the samples
+
+1. Install **VRChat Creator Companion** and create a world project
+   with Unity `2022.3.22f1`.
+2. Add **UdonSharp Toybox** via VPM or clone this repository into the
+   project's `Packages` folder.
+3. Open any scene in
+   `Packages/black.kit.toybox/Examples/Scenes` from the Unity editor.
+4. Enter **Play** mode to try the feature.
+
 ## Contributing
 
 Welcome to contribute to this repository! For more details,
