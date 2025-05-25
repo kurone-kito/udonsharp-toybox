@@ -2,7 +2,7 @@ using VRC.SDKBase;
 
 namespace black.kit.toybox
 {
-    /// <summary>The utility class forVRCPlayerApi.</summary>
+    /// <summary>The utility class for VRCPlayerApi.</summary>
     public static class PlayerUtils
     {
         /// <summary>Get the player name.</summary>

@@ -1,5 +1,3 @@
-<!-- markdownlint-disable MD024 -->
-
 # ⚙️ UdonSharp Toybox by Kuroné Kito
 
 ![U# Toybox by Kuroné Kito](https://kurone-kito.github.io/udonsharp-toybox/docs/images/banner.png)

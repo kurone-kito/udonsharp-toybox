@@ -1,4 +1,4 @@
-﻿using UdonSharp;
+using UdonSharp;
 using UnityEngine;
 using VRC.Udon.Common;
 
@@ -59,7 +59,7 @@ namespace black.kit.toybox
             SendCustomEventDelayedFrames(nameof(OnPressing), 0);
         }
 
-        /// <summary>The calllback when uses the object.</summary>
+        /// <summary>The callback when uses the object.</summary>
         /// <param name="value"></param>
         /// <param name="args">The arguments.</param>
         public override void InputUse(bool value, UdonInputEventArgs args)
