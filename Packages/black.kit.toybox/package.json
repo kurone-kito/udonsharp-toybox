@@ -4,7 +4,7 @@
   "version": "0.11.0",
   "unity": "2022.3",
   "unityRelease": "22f1",
-  "description": "Utility prefabs and scripts for UdonSharp; e.g. UI parts with global sync, Object teleporter by turning the object on or off, and other features.",
+  "description": "便利関数＆コンポーネント群 / Utility prefabs and scripts for UdonSharp; e.g. UI parts with global sync, Object teleporter by turning the object on or off, and other features.",
   "keywords": [
     "utils"
   ],
