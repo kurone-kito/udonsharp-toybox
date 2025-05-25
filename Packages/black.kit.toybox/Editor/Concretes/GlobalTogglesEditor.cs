@@ -29,7 +29,7 @@ namespace black.kit.toybox.Editor
             base.OnInspectorGUI();
 
             serializedObject.Update();
-            var toggleGroup = AutoCompleteObject<ToggleGroup>(
+            var toggleGroup = EnsureComponentAssigned<ToggleGroup>(
                 GlobalToggles.NAME_TOGGLE_GROUP);
             var arrayProp = serializedObject.FindProperty(
                 GlobalToggles.NAME_TOGGLES);

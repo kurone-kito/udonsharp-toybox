@@ -26,7 +26,7 @@ namespace black.kit.toybox.Editor
             base.OnInspectorGUI();
 
             serializedObject.Update();
-            AutoCompleteObject<AudioSource>(Doorbell.NAME_SOURCE);
+            EnsureComponentAssigned<AudioSource>(Doorbell.NAME_SOURCE);
             serializedObject.ApplyModifiedProperties();
         }
     }

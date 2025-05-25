@@ -29,8 +29,8 @@ namespace black.kit.toybox.Editor
             base.OnInspectorGUI();
 
             serializedObject.Update();
-            AutoCompleteObject<Toggle>(GlobalToggle.NAME_TOGGLE);
-            AutoCompleteObject<Subject>(SyncBehaviour.NAME_SUBJECT);
+            EnsureComponentAssigned<Toggle>(GlobalToggle.NAME_TOGGLE);
+            EnsureComponentAssigned<Subject>(SyncBehaviour.NAME_SUBJECT);
             serializedObject.ApplyModifiedProperties();
         }
     }

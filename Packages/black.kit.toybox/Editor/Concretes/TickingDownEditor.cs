@@ -29,8 +29,8 @@ namespace black.kit.toybox.Editor
             base.OnInspectorGUI();
 
             serializedObject.Update();
-            AutoCompleteObject<Text>(TickingDown.NAME_TEXT);
-            AutoCompleteObject<TextMeshProUGUI>(TickingDown.NAME_TEXT_MESH);
+            EnsureComponentAssigned<Text>(TickingDown.NAME_TEXT);
+            EnsureComponentAssigned<TextMeshProUGUI>(TickingDown.NAME_TEXT_MESH);
             serializedObject.ApplyModifiedProperties();
         }
     }

@@ -29,8 +29,8 @@ namespace black.kit.toybox.Editor
             base.OnInspectorGUI();
 
             serializedObject.Update();
-            AutoCompleteObject<Slider>(GlobalSlider.NAME_SLIDER);
-            AutoCompleteObject<Subject>(SyncBehaviour.NAME_SUBJECT);
+            EnsureComponentAssigned<Slider>(GlobalSlider.NAME_SLIDER);
+            EnsureComponentAssigned<Subject>(SyncBehaviour.NAME_SUBJECT);
             serializedObject.ApplyModifiedProperties();
         }
     }

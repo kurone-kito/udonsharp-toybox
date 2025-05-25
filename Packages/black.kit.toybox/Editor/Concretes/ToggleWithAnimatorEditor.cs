@@ -38,9 +38,9 @@ namespace black.kit.toybox.Editor
             base.OnInspectorGUI();
 
             serializedObject.Update();
-            var animator = AutoCompleteObject<Animator>(
+            var animator = EnsureComponentAssigned<Animator>(
                 ToggleWithAnimator.NAME_ANIMATOR);
-            var toggle = AutoCompleteObject<Toggle>(
+            var toggle = EnsureComponentAssigned<Toggle>(
                 ToggleWithAnimator.NAME_TOGGLE);
             var param = serializedObject.FindProperty(
                 ToggleWithAnimator.NAME_PARAMETER);

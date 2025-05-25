@@ -29,8 +29,8 @@ namespace black.kit.toybox.Editor
             base.OnInspectorGUI();
 
             serializedObject.Update();
-            AutoCompleteObject<ScrollRect>(GlobalScroll.NAME_SCROLL_RECT);
-            AutoCompleteObject<Subject>(SyncBehaviour.NAME_SUBJECT);
+            EnsureComponentAssigned<ScrollRect>(GlobalScroll.NAME_SCROLL_RECT);
+            EnsureComponentAssigned<Subject>(SyncBehaviour.NAME_SUBJECT);
             serializedObject.ApplyModifiedProperties();
         }
     }

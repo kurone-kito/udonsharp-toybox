@@ -30,7 +30,7 @@ namespace black.kit.toybox.Editor
             base.OnInspectorGUI();
 
             serializedObject.Update();
-            AutoCompleteObject<Animator>(
+            EnsureComponentAssigned<Animator>(
                 ActiveRelayToAnimationBase.NAME_ANIMATOR);
             serializedObject.ApplyModifiedProperties();
         }
