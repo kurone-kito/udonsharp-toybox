@@ -43,12 +43,15 @@ version: "0.2"
 words:
   - atrous
   - denoiser
+  - docfx
   - dwlt
   - imgbotconfig
   - kito
+  - kuron
   - kurone
   - kuroné
   - msaa
+  - nikeee
   - nunit
   - occludee
   - scriban
