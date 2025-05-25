@@ -45,5 +45,8 @@ namespace black.kit.toybox.Editor
             EditorGUI.indentLevel--;
             EditorGUILayout.EndVertical();
         }
+
+        /// <inheritdoc/>
+        protected override void OnBeforeInspectorGUI() => DrawUsage();
     }
 }

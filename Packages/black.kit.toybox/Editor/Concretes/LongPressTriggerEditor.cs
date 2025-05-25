@@ -13,13 +13,5 @@ namespace black.kit.toybox.Editor
             details: L10n.Tr(T.DETAIL_LONG_PRESS_TRIGGER))
         {
         }
-
-        /// <summary>The callback to draw the inspector GUI.</summary>
-        public override void OnInspectorGUI()
-        {
-            DrawBanner();
-            DrawDetails();
-            base.OnInspectorGUI();
-        }
     }
 }

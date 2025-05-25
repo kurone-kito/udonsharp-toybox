@@ -115,6 +115,26 @@ namespace black.kit.toybox.Editor
             EditorUtils.DrawUdonEvent(
                 argument: argument, style: defaultStyle.Value, tr: Tr);
 
+        /// <summary>Called before drawing the default inspector.</summary>
+        protected virtual void OnBeforeInspectorGUI()
+        {
+        }
+
+        /// <summary>Called after drawing the default inspector.</summary>
+        protected virtual void OnAfterInspectorGUI()
+        {
+        }
+
+        /// <summary>The callback to draw the inspector GUI.</summary>
+        public override void OnInspectorGUI()
+        {
+            DrawBanner();
+            DrawDetails();
+            OnBeforeInspectorGUI();
+            base.OnInspectorGUI();
+            OnAfterInspectorGUI();
+        }
+
 #pragma warning disable IDE0051
         /// <summary>The callback when the object is enabled.</summary>
         private void OnEnable() => LoadTexture();
