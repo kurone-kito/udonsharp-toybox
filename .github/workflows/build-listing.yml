@@ -5,20 +5,20 @@ env:
   pathToCi: ci
 
 on:
+  release:
+    types:
+      - created
+      - deleted
+      - edited
+      - published
+      - released
+      - unpublished
   workflow_dispatch:
   workflow_run:
     types:
       - completed
     workflows:
       - Build Release
-  release:
-     types:
-        - created
-        - deleted
-        - edited
-        - published
-        - released
-        - unpublished
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -29,7 +29,7 @@ permissions:
 # Allow one concurrent deployment
 concurrency:
   cancel-in-progress: true
-  group: "pages"
+  group: pages
 
 jobs:
   build-listing:
@@ -69,7 +69,7 @@ jobs:
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         name: Build Package Version Listing with Nuke
-        run: ${{ env.pathToCi }}/build.cmd BuildRepoListing --root ${{ env.pathToCi }} --list-publish-directory $GITHUB_WORKSPACE/${{ env.listPublishDirectory }} --current-package-name ${{ vars.PACKAGE_NAME }}
+        run: '"${{ env.pathToCi }}/build.cmd" BuildRepoListing --root "${{ env.pathToCi }}" --list-publish-directory "$GITHUB_WORKSPACE/${{ env.listPublishDirectory }}" --current-package-name "${{ vars.PACKAGE_NAME }}"'
       - name: Prepare for GitHub Pages deployment
         uses: actions/configure-pages@v5
         with:

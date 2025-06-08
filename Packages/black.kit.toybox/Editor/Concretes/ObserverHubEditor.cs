@@ -19,12 +19,9 @@ namespace black.kit.toybox.Editor
                 T.WARN_AVOID_EMPTY_ARRAY,
             };
 
-        /// <summary>The callback to draw the inspector GUI.</summary>
-        public override void OnInspectorGUI()
+        /// <summary>Called after drawing the default inspector.</summary>
+        protected override void OnAfterInspectorGUI()
         {
-            DrawBanner();
-            DrawDetails();
-            base.OnInspectorGUI();
             DrawList(warnings);
         }
     }

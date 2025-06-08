@@ -7,14 +7,22 @@ dictionaries:
   - en_shared
   - en-us
   - fsharp
+  - game-development
   - gaming-terms
+  - git
   - lorem-ipsum
+  - markdown
+  - misc
+  - php
   - python
+  - softwareTerms
+  - unity
 enableGlobDot: true
 features:
   weighted-suggestions: true
 globRoot: ${cwd}
 ignorePaths:
+  - .*ignore
   - .git
   - .github/CODE_OF_CONDUCT.*
   - .vscode/extensions.json
@@ -22,6 +30,7 @@ ignorePaths:
   - Assets/UdonSharp
   - Assets/XR
   - cspell.config.yml
+  - Library
   - Packages/com.*
   - Packages/dev.*
   - Packages/*.json
@@ -34,15 +43,21 @@ version: "0.2"
 words:
   - atrous
   - denoiser
+  - docfx
   - dwlt
+  - imgbotconfig
   - kito
+  - kuron
   - kurone
   - kuroné
   - msaa
+  - nikeee
   - nunit
   - occludee
   - scriban
   - spatialization
+  - spatialize
   - unityyamlmerge
   - vrchat
   - vrcsdk
+  - vstuc

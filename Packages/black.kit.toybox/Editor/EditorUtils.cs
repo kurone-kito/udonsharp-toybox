@@ -58,7 +58,7 @@ namespace black.kit.toybox.Editor
         public static void DrawList(
             IEnumerable<string> list,
             GUIStyle style,
-            ListOptions options = new ())
+            ListOptions options = new())
         {
             var putItem = options.CreatePutItem(style);
             foreach (

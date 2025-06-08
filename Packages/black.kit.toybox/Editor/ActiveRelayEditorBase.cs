@@ -16,21 +16,22 @@ namespace black.kit.toybox.Editor
         {
         }
 
-        /// <summary>The callback to draw the inspector GUI.</summary>
-        public override void OnInspectorGUI()
+        /// <summary>Called before drawing the default inspector.</summary>
+        protected override void OnBeforeInspectorGUI()
         {
-            DrawBanner();
-            DrawDetails();
             EditorGUILayout.BeginVertical(GUI.skin.box);
             var style = defaultStyle.Value;
             EditorGUILayout.LabelField(L10n.Tr(T.USAGE_COMPONENT), style);
             EditorGUILayout.Space();
             EditorGUILayout.LabelField(L10n.Tr(T.USAGE_TO_ANIMATOR), style);
             EditorGUILayout.EndVertical();
-            base.OnInspectorGUI();
+        }
 
+        /// <summary>Called after drawing the default inspector.</summary>
+        protected override void OnAfterInspectorGUI()
+        {
             serializedObject.Update();
-            AutoCompleteObject<Animator>(
+            EnsureComponentAssigned<Animator>(
                 ActiveRelayToAnimationBase.NAME_ANIMATOR);
             serializedObject.ApplyModifiedProperties();
         }

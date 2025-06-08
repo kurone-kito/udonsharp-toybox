@@ -43,7 +43,7 @@ namespace black.kit.toybox
         {
             if (!ValidateInspector())
             {
-                Debug.LogWarning(WARN_NULL);
+                Log.Warn(WARN_NULL);
                 return;
             }
             SendCustomEventDelayedFrames(nameof(InternalUpdateView), 1);

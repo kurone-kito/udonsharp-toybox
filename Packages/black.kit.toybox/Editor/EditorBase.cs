@@ -57,12 +57,15 @@ namespace black.kit.toybox.Editor
         protected Tb TypedTarget => target as Tb;
 
         /// <summary>
-        /// Auto-complete the object reference of the specified component.
+        /// Ensure the specified serialized reference has a component
+        /// from the inspected object. When the reference is empty this
+        /// method searches for the component on the target and assigns
+        /// it automatically.
         /// </summary>
-        /// <typeparam name="T">The type of the component.</typeparam>
-        /// <param name="propertyName">The name of the property.</param>
-        /// <returns>The component.</returns>
-        protected T AutoCompleteObject<T>(string propertyName)
+        /// <typeparam name="T">Component type to resolve.</typeparam>
+        /// <param name="propertyName">Serialized property name.</param>
+        /// <returns>Resolved component instance.</returns>
+        protected T EnsureComponentAssigned<T>(string propertyName)
             where T : Component
         {
             var prop = serializedObject.FindProperty(propertyName);
@@ -111,6 +114,26 @@ namespace black.kit.toybox.Editor
         protected void DrawUdonEvent(string argument) =>
             EditorUtils.DrawUdonEvent(
                 argument: argument, style: defaultStyle.Value, tr: Tr);
+
+        /// <summary>Called before drawing the default inspector.</summary>
+        protected virtual void OnBeforeInspectorGUI()
+        {
+        }
+
+        /// <summary>Called after drawing the default inspector.</summary>
+        protected virtual void OnAfterInspectorGUI()
+        {
+        }
+
+        /// <summary>The callback to draw the inspector GUI.</summary>
+        public override void OnInspectorGUI()
+        {
+            DrawBanner();
+            DrawDetails();
+            OnBeforeInspectorGUI();
+            base.OnInspectorGUI();
+            OnAfterInspectorGUI();
+        }
 
 #pragma warning disable IDE0051
         /// <summary>The callback when the object is enabled.</summary>

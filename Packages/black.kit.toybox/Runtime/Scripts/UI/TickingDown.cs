@@ -1,4 +1,4 @@
-﻿using TMPro;
+using TMPro;
 using System;
 using UdonSharp;
 using UnityEngine;

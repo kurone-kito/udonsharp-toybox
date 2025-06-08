@@ -5,9 +5,9 @@ on:
 
 jobs:
   config:
-    runs-on: ubuntu-latest
     outputs:
       config_package: ${{ steps.config_package.outputs.configPackage }}
+    runs-on: ubuntu-latest
     steps:
       - id: config_package
         name: Ensure that required repository variable has been created for the Package
@@ -17,13 +17,14 @@ jobs:
           else
             echo "configPackage=false" >> $GITHUB_OUTPUT;
           fi
+
   build:
     env:
       packagePath: Packages/${{ vars.PACKAGE_NAME }}
-      stableVersion:
-      unityPackage:
-      version:
-      zipFile:
+      stableVersion: ''
+      unityPackage: ''
+      version: ''
+      zipFile: ''
     if: needs.config.outputs.config_package == 'true'
     needs: config
     permissions:
@@ -82,7 +83,7 @@ jobs:
           echo "${GPG_PASSPHRASE}" | gpg --batch -ab "${{ env.unityPackage }}"
           echo "${GPG_PASSPHRASE}" | gpg --batch -ab "${{ env.unityPackage }}.zip"
       - id: tag_version
-        name: Make a release tag of the version from the package.json file
+        name: Create a release tag of the version from the package.json file
         # cspell: disable-next-line
         uses: rickstaa/action-create-tag@v1
         with:

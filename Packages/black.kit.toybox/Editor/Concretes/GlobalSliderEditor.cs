@@ -20,17 +20,12 @@ namespace black.kit.toybox.Editor
         {
         }
 
-        /// <summary>The callback to draw the inspector GUI.</summary>
-        public override void OnInspectorGUI()
+        /// <summary>Called after drawing the default inspector.</summary>
+        protected override void OnAfterInspectorGUI()
         {
-            DrawBanner();
-            DrawDetails();
-            DrawUsage();
-            base.OnInspectorGUI();
-
             serializedObject.Update();
-            AutoCompleteObject<Slider>(GlobalSlider.NAME_SLIDER);
-            AutoCompleteObject<Subject>(SyncBehaviour.NAME_SUBJECT);
+            EnsureComponentAssigned<Slider>(GlobalSlider.NAME_SLIDER);
+            EnsureComponentAssigned<Subject>(SyncBehaviour.NAME_SUBJECT);
             serializedObject.ApplyModifiedProperties();
         }
     }
