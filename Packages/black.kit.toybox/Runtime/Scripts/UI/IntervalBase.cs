@@ -11,7 +11,7 @@ namespace black.kit.toybox
         private const float SAFE_MIN_INTERVAL = 0.01f;
 
         /// <summary>The warning of the null.</summary>
-        private const string WARN_NULL = "Some inspector values is null.";
+        private const string WARN_NULL = "Some inspector values are null.";
 
         /// <summary>The interval of the progress.</summary>
         /// <remarks>It ignores less than 0.01f.</remarks>
