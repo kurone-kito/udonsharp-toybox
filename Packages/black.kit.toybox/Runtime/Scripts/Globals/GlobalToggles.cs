@@ -133,11 +133,12 @@ namespace black.kit.toybox
         /// </summary>
         protected override void UpdateView()
         {
-            if (toggleGroup &&
-                toggleGroup.allowSwitchOff &&
-                index < 0 || index >= toggles.Length)
+            if (index < 0 || index >= toggles.Length)
             {
-                toggleGroup.SetAllTogglesOff();
+                if (toggleGroup && toggleGroup.allowSwitchOff)
+                {
+                    toggleGroup.SetAllTogglesOff();
+                }
             }
             else
             {
