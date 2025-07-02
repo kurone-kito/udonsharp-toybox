@@ -67,7 +67,7 @@ namespace black.kit.toybox
             if (!value && isPressing)
             {
                 isPressing = false;
-                if (Duration < Threshold)
+                if (Duration < Threshold && eventTrigger)
                 {
                     eventTrigger.SendCustomEvent(eventNameOnRelease);
                 }
@@ -86,7 +86,10 @@ namespace black.kit.toybox
             if (Duration >= Threshold)
             {
                 isPressing = false;
-                eventTrigger.SendCustomEvent(eventNameOnLongPress);
+                if (eventTrigger)
+                {
+                    eventTrigger.SendCustomEvent(eventNameOnLongPress);
+                }
             }
             else
             {
