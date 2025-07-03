@@ -20,6 +20,10 @@ namespace black.kit.toybox.Tests
         [TestCase("", "abc", ExpectedResult = true)]
         [TestCase("abc", "", ExpectedResult = false)]
         [TestCase("", "", ExpectedResult = true)]
+        [TestCase("aa", "abc", ExpectedResult = true)]
+        [TestCase("abc", "basic", ExpectedResult = true)]
+        [TestCase("あい", "あいう", ExpectedResult = true)]
+        [TestCase("あいう", "あい", ExpectedResult = false)]
         public bool AreAllCharsContained(string str, string charset) =>
             str.AreAllCharsContained(charset);
     }

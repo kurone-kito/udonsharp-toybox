@@ -42,7 +42,7 @@ namespace black.kit.toybox
             }
             foreach (char c in target)
             {
-                if (!chars.Contains(c.ToString()))
+                if (chars.IndexOf(c) < 0)
                 {
                     return false;
                 }
