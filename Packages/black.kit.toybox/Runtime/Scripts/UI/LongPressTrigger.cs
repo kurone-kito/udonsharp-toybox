@@ -67,7 +67,7 @@ namespace black.kit.toybox
             if (!value && isPressing)
             {
                 isPressing = false;
-                if (Duration < Threshold)
+                if (Duration < Threshold && eventTrigger)
                 {
                     eventTrigger.SendCustomEvent(eventNameOnRelease);
                 }
@@ -86,7 +86,10 @@ namespace black.kit.toybox
             if (Duration >= Threshold)
             {
                 isPressing = false;
-                eventTrigger.SendCustomEvent(eventNameOnLongPress);
+                if (eventTrigger)
+                {
+                    eventTrigger.SendCustomEvent(eventNameOnLongPress);
+                }
             }
             else
             {
@@ -104,6 +107,15 @@ namespace black.kit.toybox
             {
                 eventTrigger = this;
             }
+        }
+
+        /// <summary>
+        /// Reset the pressing state when the component is disabled.
+        /// </summary>
+        private void OnDisable()
+        {
+            // Ensure the press state doesn't persist after disabling.
+            isPressing = false;
         }
 #pragma warning restore IDE0051
     }
